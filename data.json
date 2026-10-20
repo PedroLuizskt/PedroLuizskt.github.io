@@ -1,0 +1,907 @@
+{
+  "versao": "6.1",
+  "autor": { "nome": "Pedro Luiz R. Vaz de Melo", "email": "pedroschuldiner@outlook.com", "github": "https://github.com/PedroLuizskt", "linkedin": "https://www.linkedin.com/in/pedro-luiz-rodrigues-vaz-de-melo", "curriculo": "assets/docs/curriculo_pedro_luiz.pdf" },
+  "tags": {
+    "webgis": "WebGIS",
+    "clima": "Clima e água",
+    "sr": "Sensoriamento remoto",
+    "ml": "Machine learning e IA",
+    "eng": "Engenharia de software"
+  },
+  "aoVivo": [
+    { "projeto": "florestas-publicas-brasil", "rotulo": "Florestas públicas", "url": "https://pedroluizskt.github.io/florestas-publicas-brasil/", "aviso": "Carrega cerca de 85 MB de GeoJSON. Prefira uma conexão Wi-Fi." },
+    { "projeto": "enso-centro-oeste", "rotulo": "ENSO no Centro-Oeste", "url": "https://pedroluizskt.github.io/enso-centro-oeste/", "aviso": "Carrega cerca de 2 MB." },
+    { "projeto": "gee-precipitation-webmap-mg", "rotulo": "Chuva extrema em MG", "url": "https://pedroluizskt.github.io/gee-precipitation-webmap-mg/webmap_precipitacao_fevereiro.html", "aviso": "Carrega cerca de 2 MB." },
+    { "projeto": "open-buildings-explorer-br", "rotulo": "Open Buildings", "url": "https://pedroluizskt.github.io/open-buildings-explorer-br/", "aviso": "Carrega os polígonos de mais de 500 mil edificações; pode levar alguns segundos." },
+    { "projeto": "agrodados", "rotulo": "AgroDados", "url": "https://pedroluizskt.github.io/Agrodados-imersao-dev/", "aviso": "Carrega cerca de 2,5 MB." }
+  ],
+  "projetos": [
+    {
+      "id": "florestas-publicas-brasil",
+      "titulo": "Florestas Públicas do Brasil",
+      "local": "Brasil, CNFP 2024",
+      "resumo": "Análise geoespacial do Cadastro Nacional de Florestas Públicas cruzada com as malhas do IBGE, publicada como WebMap de quatro abas.",
+      "descricao": [
+        "Análise geoespacial completa do Cadastro Nacional de Florestas Públicas (CNFP 2024), do Serviço Florestal Brasileiro, cruzada com as malhas municipal e estadual do IBGE 2024.",
+        "O WebMap publicado no GitHub Pages permite explorar 339,8 milhões de hectares em quatro abas: visão geral com choropleth estadual e municipal, ranking dos 50 maiores municípios, série histórica de criação desde 1930 e recorte por bioma."
+      ],
+      "destaques": [
+        "Choropleth comutável entre estados, municípios e a camada de florestas, com filtro por categoria",
+        "Maior floresta pública cadastrada: Alto Rio Negro (AM), com 7,29 milhões de hectares",
+        "Notebooks de diagnóstico e de processamento reprodutíveis"
+      ],
+      "metricas": [
+        { "valor": "339,8 M ha", "rotulo": "área cadastrada" },
+        { "valor": "39,91%", "rotulo": "do território nacional" },
+        { "valor": "20.829", "rotulo": "feições analisadas" }
+      ],
+      "tags": [
+        "webgis"
+      ],
+      "stack": [
+        "Python",
+        "GeoPandas",
+        "Shapely",
+        "Leaflet.js",
+        "Chart.js",
+        "GitHub Pages"
+      ],
+      "links": {
+        "codigo": "https://github.com/PedroLuizskt/florestas-publicas-brasil",
+        "demo": "https://pedroluizskt.github.io/florestas-publicas-brasil/"
+      },
+      "midia": {
+        "capa": "assets/projects/florestas-publicas-brasil/cover.jpg",
+        "capaMini": "assets/projects/florestas-publicas-brasil/cover-800.jpg",
+        "video": "assets/projects/florestas-publicas-brasil/preview.mp4",
+        "galeria": [
+          { "src": "assets/projects/florestas-publicas-brasil/cover.jpg", "legenda": "Choropleth municipal da área de florestas públicas" },
+          { "src": "assets/projects/florestas-publicas-brasil/g1.jpg", "legenda": "Camada de florestas públicas por categoria" },
+          { "src": "assets/projects/florestas-publicas-brasil/g2.jpg", "legenda": "Aba de ranking municipal" },
+          { "src": "assets/projects/florestas-publicas-brasil/g3.jpg", "legenda": "Série histórica de criação, de 1930 a 2024" },
+          { "src": "assets/projects/florestas-publicas-brasil/mapa-base.jpg", "legenda": "Captura original com o mapa base CARTO" }
+        ]
+      }
+    },
+    {
+      "id": "enso-centro-oeste",
+      "titulo": "ENSO no Centro-Oeste",
+      "local": "MT, MS, GO e DF, 468 municípios",
+      "resumo": "Pacote Python que mede a teleconexão entre o El Niño e o clima do Centro-Oeste, com um dashboard WebMap que funciona offline.",
+      "descricao": [
+        "Pacote Python instalável (enso_co) que quantifica a teleconexão entre o El Niño-Oscilação Sul e o clima do Centro-Oeste brasileiro no nível municipal. Cruza os índices oficiais RONI, ONI e SOI da NOAA/CPC com precipitação CHIRPS e temperatura ERA5-Land obtidas via Google Earth Engine.",
+        "Aplica correção de autocorrelação de Bretherton, testes de permutação circular e Moran's I. Adota o RONI como índice primário, seguindo a NOAA desde fevereiro de 2026. A saída é um dashboard autônomo que funciona offline."
+      ],
+      "destaques": [
+        "Gradiente latitudinal robusto: r entre -0,836 e -0,849, com Moran's I acima de 0,93",
+        "Polo negativo forte no norte do Mato Grosso e janela sazonal OND identificada empiricamente",
+        "Todos os dados obtidos programaticamente, sem download manual"
+      ],
+      "metricas": [
+        { "valor": "468", "rotulo": "municípios analisados" },
+        { "valor": "3", "rotulo": "índices NOAA: RONI, ONI e SOI" },
+        { "valor": "> 0,93", "rotulo": "Moran's I do gradiente" }
+      ],
+      "tags": [
+        "clima",
+        "webgis"
+      ],
+      "stack": [
+        "Python",
+        "Google Earth Engine",
+        "GeoPandas",
+        "NumPy",
+        "SciPy",
+        "Leaflet.js",
+        "Chart.js"
+      ],
+      "links": {
+        "codigo": "https://github.com/PedroLuizskt/enso-centro-oeste",
+        "demo": "https://pedroluizskt.github.io/enso-centro-oeste/"
+      },
+      "midia": {
+        "capa": "assets/projects/enso-centro-oeste/cover.jpg",
+        "capaMini": "assets/projects/enso-centro-oeste/cover-800.jpg",
+        "video": "assets/projects/enso-centro-oeste/preview.mp4",
+        "galeria": [
+          { "src": "assets/projects/enso-centro-oeste/cover.jpg", "legenda": "Precipitação anual por município" },
+          { "src": "assets/projects/enso-centro-oeste/g1.jpg", "legenda": "Modo teleconexão: correlação com o RONI" },
+          { "src": "assets/projects/enso-centro-oeste/g2.jpg", "legenda": "Aba de correlação por índice" },
+          { "src": "assets/projects/enso-centro-oeste/g3.jpg", "legenda": "Composição por fase do ENSO" },
+          { "src": "assets/projects/enso-centro-oeste/mapa-base.jpg", "legenda": "Captura original com o mapa base" }
+        ]
+      }
+    },
+    {
+      "id": "gee-precipitation-webmap-mg",
+      "titulo": "Chuva extrema na Zona da Mata",
+      "local": "Zona da Mata e Sul de MG",
+      "resumo": "Pipeline serverless que processou 20 anos de CHIRPS no Earth Engine para quantificar a catástrofe de fevereiro de 2026 em Minas Gerais.",
+      "descricao": [
+        "Em fevereiro de 2026, a Zona da Mata mineira enfrentou uma catástrofe climática sem precedentes. Este pipeline de ETL geoespacial filtra 20 anos (2006 a 2026) de imagens diárias CHIRPS no Google Earth Engine, delegando a redução espacial aos clusters do Google.",
+        "GeoPandas harmoniza a malha do IBGE 2024, Pandas calcula médias, desvios e anomalias, e o resultado é injetado num WebMap Leaflet autônomo, sem back-end."
+      ],
+      "destaques": [
+        "Juiz de Fora registrou 558 mm, contra média histórica de 197 mm",
+        "Alertas críticos em Pequeri (+167%) e Barão do Monte Alto (+143%)",
+        "Cache singleton evita chamadas redundantes à API do Earth Engine"
+      ],
+      "metricas": [
+        { "valor": "558 mm", "rotulo": "Juiz de Fora, fev. 2026" },
+        { "valor": "+183%", "rotulo": "acima da média histórica" },
+        { "valor": "20 anos", "rotulo": "de CHIRPS diário" }
+      ],
+      "tags": [
+        "clima",
+        "sr",
+        "webgis"
+      ],
+      "stack": [
+        "Python",
+        "Google Earth Engine",
+        "GeoPandas",
+        "Pandas",
+        "Leaflet.js",
+        "Chart.js"
+      ],
+      "links": {
+        "codigo": "https://github.com/PedroLuizskt/gee-precipitation-webmap-mg",
+        "demo": "https://pedroluizskt.github.io/gee-precipitation-webmap-mg/webmap_precipitacao_fevereiro.html"
+      },
+      "midia": {
+        "capa": "assets/projects/gee-precipitation-webmap-mg/cover.jpg",
+        "capaMini": "assets/projects/gee-precipitation-webmap-mg/cover-800.jpg",
+        "video": "assets/projects/gee-precipitation-webmap-mg/preview.mp4",
+        "galeria": [
+          { "src": "assets/projects/gee-precipitation-webmap-mg/g1.jpg", "legenda": "Fevereiro de 2026 sobre a imagem de satélite: média regional e série por município" },
+          { "src": "assets/projects/gee-precipitation-webmap-mg/g2.jpg", "legenda": "Juiz de Fora em destaque: 558 mm em fevereiro de 2026" },
+          { "src": "assets/projects/gee-precipitation-webmap-mg/g3.jpg", "legenda": "Visão geral com o resumo da catástrofe e o ranking municipal" }
+        ]
+      }
+    },
+    {
+      "id": "open-buildings-explorer-br",
+      "titulo": "Open Buildings Explorer BR",
+      "local": "Cambuquira e Uberlândia (MG)",
+      "resumo": "DuckDB consultando direto do S3 os 141 milhões de edificações do Open Buildings no Brasil, com webmap comparando Google e Microsoft.",
+      "descricao": [
+        "Pipeline Python que consulta o Google-Microsoft Open Buildings, com 2,5 bilhões de edificações no mundo e 141 milhões no Brasil, direto do armazenamento S3 público com DuckDB: leitura de Parquet com predicate pushdown e SQL espacial, sem servidor e sem baixar o dataset inteiro para cada análise.",
+        "As áreas de interesse usam os polígonos oficiais da malha municipal do IBGE 2022, e novas AOIs entram por uma linha de comando que busca o polígono na API do IBGE. O resultado é um webmap multi-AOI com painel de três abas: visão geral com a divisão Google × Microsoft, histograma de áreas por faixa com tabela comparativa entre AOIs e o detalhe de cada edificação clicada."
+      ],
+      "destaques": [
+        "Uberlândia tem 44 vezes mais edificações que Cambuquira em 17 vezes mais área",
+        "Em Cambuquira, 92,7% dos footprints vêm do Google; a Microsoft capta estruturas menores (57,6 m² em média, contra 96,8 m²)",
+        "CLI completa, inclusive para gerenciar o cache de 35 a 40 GB do DuckDB"
+      ],
+      "metricas": [
+        { "valor": "141 mi", "rotulo": "edificações no Brasil" },
+        { "valor": "537.880", "rotulo": "edificações em Uberlândia" },
+        { "valor": "169", "rotulo": "testes automatizados" }
+      ],
+      "tags": [
+        "webgis",
+        "sr",
+        "eng"
+      ],
+      "stack": [
+        "Python",
+        "DuckDB",
+        "SQL espacial",
+        "Parquet (S3)",
+        "Leaflet.js",
+        "Chart.js",
+        "pytest"
+      ],
+      "links": {
+        "codigo": "https://github.com/PedroLuizskt/open-buildings-explorer-br",
+        "demo": "https://pedroluizskt.github.io/open-buildings-explorer-br/"
+      },
+      "midia": {
+        "capa": "assets/projects/open-buildings-explorer-br/cover.jpg",
+        "capaMini": "assets/projects/open-buildings-explorer-br/cover-800.jpg",
+        "video": null,
+        "galeria": [
+          { "src": "assets/projects/open-buildings-explorer-br/g1.jpg", "legenda": "Uberlândia: 537.880 edificações e a distribuição de áreas por faixa" },
+          { "src": "assets/projects/open-buildings-explorer-br/g2.jpg", "legenda": "Cambuquira: detalhe de uma edificação clicada (fonte Google, 85 m²)" }
+        ]
+      }
+    },
+    {
+      "id": "gee-app-parana",
+      "titulo": "Paraná: silvicultura e clima",
+      "local": "Paraná, Earth Engine App",
+      "resumo": "Aplicativo no Google Earth Engine com três módulos: uso do solo MapBiomas, detecção de florestas densas e estoque de carbono.",
+      "descricao": [
+        "Plataforma com três módulos interativos voltados ao setor florestal. O primeiro mapeia o uso da terra com a Coleção 10 do MapBiomas (1985 a 2024) e isola os plantios comerciais. O segundo detecta florestas densas combinando NDVI e NDII do Sentinel-2 para separar maciços florestais de culturas sazonais.",
+        "O terceiro espacializa o estoque de carbono acima do solo com o ESA CCI Biomass v6.0 (2015 a 2022). Ao clicar no mapa, o aplicativo gera gráficos da composição de classes no entorno, do ciclo fenológico mensal ou da evolução do carbono por hectare."
+      ],
+      "destaques": [
+        "MapBiomas Coleção 10, de 1985 a 2024",
+        "NDVI e NDII do Sentinel-2 para separar florestas densas de culturas sazonais",
+        "Gráficos gerados sob demanda a cada clique no mapa"
+      ],
+      "metricas": [
+        { "valor": "3", "rotulo": "módulos analíticos" },
+        { "valor": "40 anos", "rotulo": "de uso do solo MapBiomas" },
+        { "valor": "2015–22", "rotulo": "série de biomassa ESA CCI" }
+      ],
+      "tags": [
+        "sr",
+        "webgis"
+      ],
+      "stack": [
+        "JavaScript",
+        "Google Earth Engine",
+        "MapBiomas",
+        "Sentinel-2",
+        "ESA CCI Biomass"
+      ],
+      "links": {
+        "codigo": null,
+        "demo": "https://pedroschuldiner1.users.earthengine.app/view/paran-cobertura-do-solo-deteco-florestal-e-estoque-de-c"
+      },
+      "midia": {
+        "capa": "assets/projects/gee-app-parana/cover.jpg",
+        "capaMini": "assets/projects/gee-app-parana/cover-800.jpg",
+        "video": null,
+        "galeria": [
+          { "src": "assets/projects/gee-app-parana/cover.jpg", "legenda": "Interface do aplicativo com gráfico de composição no entorno" }
+        ]
+      }
+    },
+    {
+      "id": "brazil-hydro-dynamics",
+      "titulo": "Brazil Hydro Dynamics",
+      "local": "Municípios brasileiros",
+      "resumo": "Pipelines orientados a objetos no Earth Engine para microbacias, dinâmica de água superficial e risco de inundação pelo índice HAND.",
+      "descricao": [
+        "Suíte de pipelines Python para análise hidrológica, topográfica e de água superficial de municípios brasileiros, com arquitetura orientada a objetos e processamento no Google Earth Engine.",
+        "São três módulos: microbacias de nível 10 do HydroATLAS com vazão, precipitação e cobertura florestal; transições de água superficial ao longo de quase 40 anos com o JRC Global Surface Water; e hidrotopografia com o MERIT Hydro, incluindo declividade, rede de drenagem e o índice HAND para mapear risco de inundação."
+      ],
+      "destaques": [
+        "Mapas de declividade de Petrópolis (RJ) e de altimetria e vazão de Porto Alegre (RS)",
+        "Classificação da persistência da água: permanente, sazonal e nova",
+        "Estrutura modular e reprodutível em notebooks"
+      ],
+      "metricas": [
+        { "valor": "3", "rotulo": "módulos analíticos" },
+        { "valor": "1984–2021", "rotulo": "água superficial JRC" },
+        { "valor": "nível 10", "rotulo": "microbacias HydroATLAS" }
+      ],
+      "tags": [
+        "clima",
+        "sr"
+      ],
+      "stack": [
+        "Python",
+        "Google Earth Engine",
+        "GeoPandas",
+        "Matplotlib",
+        "HydroATLAS",
+        "MERIT Hydro"
+      ],
+      "links": {
+        "codigo": "https://github.com/PedroLuizskt/brazil-hydro-dynamics",
+        "demo": null
+      },
+      "midia": {
+        "capa": "assets/projects/brazil-hydro-dynamics/cover.jpg",
+        "capaMini": "assets/projects/brazil-hydro-dynamics/cover-800.jpg",
+        "video": null,
+        "galeria": [
+          { "src": "assets/projects/brazil-hydro-dynamics/g1.jpg", "legenda": "Declividade do relevo em Petrópolis (RJ)" },
+          { "src": "assets/projects/brazil-hydro-dynamics/g2.jpg", "legenda": "Altimetria digital de Porto Alegre (RS)" },
+          { "src": "assets/projects/brazil-hydro-dynamics/g3.jpg", "legenda": "Rede de drenagem e vazão média em Porto Alegre" },
+          { "src": "assets/projects/brazil-hydro-dynamics/g4.jpg", "legenda": "Estatística das microbacias" }
+        ]
+      }
+    },
+    {
+      "id": "geospatial-automation-suite",
+      "titulo": "Geospatial Automation Suite",
+      "local": "Dossiês por município ou imóvel",
+      "resumo": "Uma fábrica de relatórios: pipelines que geram dossiês técnicos em PDF sobre CAR, solos, clima e uso do solo em minutos, não em dias.",
+      "descricao": [
+        "Suíte de pipelines que transforma a produção de relatórios técnicos, antes manual e repetitiva, num sistema automatizado. Combina processamento local com GeoPandas e Rasterio para dados vetoriais sensíveis (CAR, Reserva Legal, APP) e o Google Earth Engine para análises em escala nacional.",
+        "Gera dossiês em PDF com mapas temáticos prontos: CAR municipal, balanço automático de Reserva Legal (20%, 35% ou 80%, conforme bioma e Amazônia Legal), uso do solo multitemporal de 1985 a 2024, declividade NASADEM, carbono do solo, índices de vegetação e clima."
+      ],
+      "destaques": [
+        "15 relatórios de exemplo reais publicados no repositório",
+        "Cálculo automático de déficit ou excedente de Reserva Legal",
+        "Uso e cobertura do solo em Acará (PA), comparando 1985 e 2024"
+      ],
+      "metricas": [
+        { "valor": "15", "rotulo": "relatórios de exemplo" },
+        { "valor": "1985–2024", "rotulo": "uso do solo MapBiomas" },
+        { "valor": "minutos", "rotulo": "por relatório, antes dias" }
+      ],
+      "tags": [
+        "sr",
+        "eng"
+      ],
+      "stack": [
+        "Python",
+        "GeoPandas",
+        "Rasterio",
+        "Google Earth Engine",
+        "geemap",
+        "Matplotlib"
+      ],
+      "links": {
+        "codigo": "https://github.com/PedroLuizskt/Geospatial-Automation-Suite",
+        "demo": null
+      },
+      "midia": {
+        "capa": "assets/projects/geospatial-automation-suite/cover.jpg",
+        "capaMini": "assets/projects/geospatial-automation-suite/cover-800.jpg",
+        "video": null,
+        "galeria": [
+          { "src": "assets/projects/geospatial-automation-suite/cover.jpg", "legenda": "Páginas reais de relatórios gerados pela suíte" },
+          { "src": "assets/projects/geospatial-automation-suite/g1.jpg", "legenda": "Relatório de EVI" },
+          { "src": "assets/projects/geospatial-automation-suite/g2.jpg", "legenda": "Relatório de temperatura de superfície" },
+          { "src": "assets/projects/geospatial-automation-suite/g3.jpg", "legenda": "Relatório de carbono do solo" },
+          { "src": "assets/projects/geospatial-automation-suite/g4.jpg", "legenda": "Uso e cobertura do solo em Acará (PA), 1985 e 2024" }
+        ]
+      }
+    },
+    {
+      "id": "forest-py-estudos",
+      "titulo": "Forest-Py",
+      "local": "Engenharia Florestal, 12 sessões",
+      "resumo": "Pacote Python que compara modelos clássicos e redes neurais em dendrometria, inventário e segmentação de copas com U-Net.",
+      "descricao": [
+        "Pacote Python instalável (forestpy) que aplica machine learning e deep learning aos desafios clássicos da Engenharia Florestal: dendrometria, inventário, classificação de sítio, distribuição diamétrica e sensoriamento remoto, até a segmentação semântica de copas com U-Net em PyTorch.",
+        "A tese central é demonstrada empiricamente ao longo de doze sessões: nenhum paradigma é universalmente superior. Modelos clássicos vencem com a forma funcional correta ou com poucos dados; redes neurais vencem com atributos mais ricos ou saída espacialmente densa. Os dados são sintéticos e reproduzíveis, com distribuições realistas de plantios de Eucalyptus grandis."
+      ],
+      "destaques": [
+        "A U-Net supera o baseline NDVI em +0,72 de IoU na segmentação de copas",
+        "Validação cruzada e intervalos de confiança bootstrap em cada comparação",
+        "Inspirado no fptools, de Vinicius Richter, e estendido para redes neurais"
+      ],
+      "metricas": [
+        { "valor": "223", "rotulo": "testes automatizados" },
+        { "valor": "12", "rotulo": "sessões didáticas" },
+        { "valor": "+0,72", "rotulo": "de IoU com a U-Net" }
+      ],
+      "tags": [
+        "ml"
+      ],
+      "stack": [
+        "Python",
+        "PyTorch",
+        "scikit-learn",
+        "Pandas",
+        "NumPy",
+        "pytest"
+      ],
+      "links": {
+        "codigo": "https://github.com/PedroLuizskt/forest-py-estudos",
+        "demo": null
+      },
+      "midia": {
+        "capa": "assets/projects/forest-py-estudos/cover.jpg",
+        "capaMini": "assets/projects/forest-py-estudos/cover-800.jpg",
+        "video": null,
+        "galeria": [
+          { "src": "assets/projects/forest-py-estudos/cover.jpg", "legenda": "Comparação visual entre o baseline NDVI e a U-Net" },
+          { "src": "assets/projects/forest-py-estudos/g1.jpg", "legenda": "Recortes NIR-R-G usados na classificação com CNN" },
+          { "src": "assets/projects/forest-py-estudos/g2.jpg", "legenda": "Matriz de confusão normalizada" },
+          { "src": "assets/projects/forest-py-estudos/g3.jpg", "legenda": "Curvas de aprendizado da MLP" },
+          { "src": "assets/projects/forest-py-estudos/g4.jpg", "legenda": "Distribuição diamétrica: Weibull comparada à MLP" }
+        ]
+      }
+    },
+    {
+      "id": "recomendador-municipios-agro",
+      "titulo": "Recomendador de municípios",
+      "local": "Brasil, 5.571 municípios",
+      "resumo": "Dado um município, retorna os mais parecidos pelo perfil pecuário: dados do IBGE viram texto, vetores e similaridade cosseno.",
+      "descricao": [
+        "Sistema de recomendação content-based que responde a uma pergunta prática: dado um município brasileiro, quais têm o perfil agropecuário mais parecido? Serve, por exemplo, para um consultor de Cambuquira (MG) encontrar municípios análogos em outros estados, para benchmarking ou expansão comercial.",
+        "O pipeline baixa o efetivo de rebanhos da Pesquisa da Pecuária Municipal (SIDRA, tabela 3939) e a hierarquia territorial da API Localidades, deriva perfis de baixa, média ou alta atividade e a especialização de cada município, e junta tudo num documento de tags. O CountVectorizer, com o stemmer RSLP para português e preservando os nomes compostos, transforma esses documentos em vetores; a similaridade cosseno ordena os vizinhos.",
+        "É uma adaptação autoral do projeto de espaço vetorial do capítulo 8 da pós-graduação da Data Science Academy, trocando filmes por municípios, com apostila didática em seis sessões e uma extensão opcional de validação espacial pelo índice de Moran."
+      ],
+      "destaques": [
+        "Consulta por nome, por código IBGE ou por um perfil hipotético de tags",
+        "Explicação de cada recomendação: tokens em comum e as três métricas lado a lado",
+        "Busca de análogos fora da própria UF, para benchmarking entre estados"
+      ],
+      "metricas": [
+        { "valor": "5.571", "rotulo": "municípios vetorizados" },
+        { "valor": "3", "rotulo": "métricas de distância" },
+        { "valor": "214", "rotulo": "testes automatizados" }
+      ],
+      "tags": [
+        "ml"
+      ],
+      "stack": [
+        "Python",
+        "pandas",
+        "scikit-learn",
+        "NLTK (RSLP)",
+        "API SIDRA",
+        "pytest"
+      ],
+      "links": {
+        "codigo": "https://github.com/PedroLuizskt/datascience-projects/tree/main/projeto_01_espaco_vetorial_recomendador_municipios_agro",
+        "demo": null
+      },
+      "midia": {
+        "capa": "assets/projects/recomendador-municipios-agro/cover.jpg",
+        "capaMini": "assets/projects/recomendador-municipios-agro/cover-800.jpg",
+        "video": null,
+        "galeria": [
+          { "src": "assets/projects/recomendador-municipios-agro/cover.jpg", "legenda": "Capa: municípios como vetores e o ângulo entre eles" },
+          { "src": "assets/projects/recomendador-municipios-agro/g1.jpg", "legenda": "Do IBGE ao top-k: as etapas do pipeline e a linha de comando" }
+        ]
+      }
+    },
+    {
+      "id": "analise-silvicultura-brasileira",
+      "titulo": "Silvicultura brasileira",
+      "local": "IBGE PEVS, 3.700+ municípios",
+      "resumo": "Do ETL na API SIDRA ao K-Means: perfis produtivos dos municípios do setor de madeira, celulose e energia.",
+      "descricao": [
+        "Pipeline de ciência de dados ponta a ponta sobre o mercado florestal brasileiro. Extrai e trata dados da Tabela 291 do IBGE (PEVS) pela API SIDRA e transforma registros brutos em inteligência de mercado.",
+        "Segmenta mais de 3.700 municípios produtores com K-Means, calibrado pelo método do cotovelo e validado geometricamente por PCA, com visualizações interativas em Plotly para apoio à decisão."
+      ],
+      "destaques": [
+        "Minas Gerais lidera o acumulado, puxado pela demanda siderúrgica por carvão vegetal",
+        "Queda do preço médio implícito em 2024 com faturamento em alta",
+        "k = 4 grupos definidos pelo método do cotovelo"
+      ],
+      "metricas": [
+        { "valor": "3.700+", "rotulo": "municípios produtores" },
+        { "valor": "k = 4", "rotulo": "perfis produtivos" },
+        { "valor": "PEVS", "rotulo": "IBGE, tabela 291" }
+      ],
+      "tags": [
+        "ml"
+      ],
+      "stack": [
+        "Python",
+        "Pandas",
+        "scikit-learn",
+        "Plotly",
+        "API SIDRA"
+      ],
+      "links": {
+        "codigo": "https://github.com/PedroLuizskt/analise-silvicultura-brasileira",
+        "demo": null
+      },
+      "midia": {
+        "capa": "assets/projects/analise-silvicultura-brasileira/cover.jpg",
+        "capaMini": "assets/projects/analise-silvicultura-brasileira/cover-800.jpg",
+        "video": null,
+        "galeria": [
+          { "src": "assets/projects/analise-silvicultura-brasileira/cover.jpg", "legenda": "Painel do setor florestal brasileiro" },
+          { "src": "assets/projects/analise-silvicultura-brasileira/g1.jpg", "legenda": "Método do cotovelo para escolher k" },
+          { "src": "assets/projects/analise-silvicultura-brasileira/g2.jpg", "legenda": "Validação dos grupos por PCA" },
+          { "src": "assets/projects/analise-silvicultura-brasileira/g3.jpg", "legenda": "Perfil dos grupos" }
+        ]
+      }
+    },
+    {
+      "id": "geopython-assistant",
+      "titulo": "GeoPython Assistant",
+      "local": "IA aplicada às geociências",
+      "resumo": "Assistente de código geoespacial com LLM. A v1 está no ar; a v2 usa RAG sobre a documentação oficial para evitar APIs inventadas.",
+      "descricao": [
+        "A primeira versão é um mentor de IA construído com engenharia de prompt sobre o Llama-3 70B via Groq: traduz qualquer dúvida de programação para o ecossistema geoespacial, prioriza bibliotecas oficiais e sugere otimizações para grandes volumes de dados.",
+        "A versão 2 combina duas frentes de RAG: um diagnóstico estruturado dos arquivos vetoriais e matriciais enviados pelo usuário, validado com Pydantic v2, e a recuperação de trechos da documentação oficial de GeoPandas, Rasterio e Rioxarray num banco vetorial Chroma, compostos numa cadeia LCEL."
+      ],
+      "destaques": [
+        "Reduz a alucinação de API condicionando o código às características reais do dado",
+        "Demo pública da v1 no Streamlit Community Cloud",
+        "Testes automatizados para o diagnóstico e o pipeline RAG"
+      ],
+      "metricas": [
+        { "valor": "70B", "rotulo": "Llama-3 via Groq" },
+        { "valor": "2", "rotulo": "frentes de RAG na v2" },
+        { "valor": "Chroma", "rotulo": "base vetorial da documentação" }
+      ],
+      "tags": [
+        "ml",
+        "eng"
+      ],
+      "stack": [
+        "Python",
+        "Streamlit",
+        "LangChain",
+        "Groq",
+        "Llama-3",
+        "Chroma",
+        "Pydantic v2"
+      ],
+      "links": {
+        "codigo": "https://github.com/PedroLuizskt/GeoPython-Assistant-v2",
+        "demo": "https://geopython-assistant-skt.streamlit.app/",
+        "extra": {
+          "rotulo": "Código da v1",
+          "url": "https://github.com/PedroLuizskt/GeoPython-Assistant"
+        }
+      },
+      "midia": {
+        "capa": "assets/projects/geopython-assistant/cover.jpg",
+        "capaMini": "assets/projects/geopython-assistant/cover-800.jpg",
+        "video": "assets/projects/geopython-assistant/preview.mp4",
+        "galeria": [
+          { "src": "assets/projects/geopython-assistant/cover.jpg", "legenda": "Arquitetura da v2" },
+          { "src": "assets/projects/geopython-assistant/g1.jpg", "legenda": "Interface da v1 no Streamlit, com uma pergunta sendo digitada" }
+        ]
+      }
+    },
+    {
+      "id": "agrodados",
+      "titulo": "AgroDados",
+      "local": "Brasil, 27 unidades federativas",
+      "resumo": "Hub que reúne num mapa clicável os portais oficiais de dados fundiários e ambientais do Brasil, estado por estado.",
+      "descricao": [
+        "Plataforma web que resolve a fragmentação dos dados geoespaciais, ambientais e fundiários do Brasil. Encontrar um shapefile do CAR, dados de outorga ou mapas de uso do solo costuma exigir dezenas de portais diferentes.",
+        "O AgroDados funciona como balcão único: um mapa SVG interativo filtra as bases por estado, com alternância entre fontes federais (MapBiomas, SICAR, INDE) e estaduais, organizadas por tema. Desenvolvido durante a Imersão Dev da Alura com o Google."
+      ],
+      "destaques": [
+        "Mapa SVG do Brasil com filtro por estado",
+        "Bases organizadas por tema: regularização, topografia, hidrologia e uso do solo",
+        "HTML, CSS e JavaScript puros, sem framework"
+      ],
+      "metricas": [
+        { "valor": "80", "rotulo": "bases oficiais catalogadas" },
+        { "valor": "27", "rotulo": "unidades federativas" },
+        { "valor": "1", "rotulo": "ponto único de acesso" }
+      ],
+      "tags": [
+        "webgis"
+      ],
+      "stack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "SVG"
+      ],
+      "links": {
+        "codigo": "https://github.com/PedroLuizskt/Agrodados-imersao-dev",
+        "demo": "https://pedroluizskt.github.io/Agrodados-imersao-dev/"
+      },
+      "midia": {
+        "capa": "assets/projects/agrodados/cover.jpg",
+        "capaMini": "assets/projects/agrodados/cover-800.jpg",
+        "video": "assets/projects/agrodados/preview.mp4",
+        "galeria": [
+          { "src": "assets/projects/agrodados/cover.jpg", "legenda": "Minas Gerais selecionado no mapa" },
+          { "src": "assets/projects/agrodados/g1.jpg", "legenda": "Tela inicial com o mapa do Brasil" }
+        ]
+      }
+    },
+    {
+      "id": "romaneio-digital-vimef",
+      "titulo": "Romaneio Digital Vimef",
+      "local": "Consultoria, Vimef Engenharia",
+      "resumo": "Sistema serverless de romaneio florestal: módulo de campo offline-first e painel do cliente com cubagem de toras e lenha.",
+      "descricao": [
+        "Aplicação front-end serverless que digitaliza a coleta, o cálculo e a apresentação de romaneios florestais de toras e lenha. O módulo de campo funciona offline, salva localmente, calcula volumes em tempo real e reduz as fotos para base64 leve antes da exportação.",
+        "Todo o estado da obra vira um único JSON, que alimenta um painel público com indicadores, gráficos Chart.js e carrossel de fotos do pátio. O motor de cálculo aplica a fórmula de Smalian tolerante a medições ausentes e converte lenha de estéreo para metro cúbico."
+      ],
+      "destaques": [
+        "Smalian exata, tolerante a medições faltantes na base e no topo",
+        "Offline-first com localStorage, imune a quedas de conexão",
+        "Entrega estática no GitHub Pages, sem servidor nem banco de dados"
+      ],
+      "metricas": [
+        { "valor": "Smalian", "rotulo": "cubagem de toras" },
+        { "valor": "0,725", "rotulo": "fator de estéreo para m³" },
+        { "valor": "100%", "rotulo": "no navegador" }
+      ],
+      "tags": [
+        "eng"
+      ],
+      "stack": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Chart.js",
+        "localStorage",
+        "Canvas"
+      ],
+      "links": {
+        "codigo": "https://github.com/PedroLuizskt/vimef-frontend",
+        "demo": "https://pedroluizskt.github.io/vimef-frontend/"
+      },
+      "midia": {
+        "capa": "assets/projects/romaneio-digital-vimef/cover.jpg",
+        "capaMini": "assets/projects/romaneio-digital-vimef/cover-800.jpg",
+        "video": "assets/projects/romaneio-digital-vimef/preview.mp4",
+        "galeria": [
+          { "src": "assets/projects/romaneio-digital-vimef/cover.jpg", "legenda": "Painel público do romaneio" },
+          { "src": "assets/projects/romaneio-digital-vimef/g1.jpg", "legenda": "Volume por espécie e por pátio" },
+          { "src": "assets/projects/romaneio-digital-vimef/g2.jpg", "legenda": "Tabela de toras com a fórmula de Smalian" },
+          { "src": "assets/projects/romaneio-digital-vimef/g3.jpg", "legenda": "Tabela de lenha com fator de empilhamento" }
+        ]
+      }
+    },
+    {
+      "id": "estudos-observabilidade",
+      "titulo": "Estudos de Observabilidade",
+      "local": "Python, stack Grafana LGTM",
+      "resumo": "Cinco aulas que levam um serviço sem instrumentação até métricas, traces e logs correlacionados com OpenTelemetry.",
+      "descricao": [
+        "Jornada incremental pelo ecossistema de observabilidade moderna em Python. Partindo de uma aplicação propositalmente sem instrumentação, cada aula adiciona um pilar: métricas com OpenTelemetry e Prometheus, tracing distribuído com Tempo e propagação de contexto W3C, logs estruturados correlacionados no Loki e persistência PostgreSQL instrumentada.",
+        "Tudo roda sobre o stack Grafana LGTM com Docker Compose. O repositório documenta a evolução do código em commits progressivos e a evolução do raciocínio em apostilas autorais."
+      ],
+      "destaques": [
+        "Correlação entre traces e logs com propagação de contexto W3C",
+        "Apostila autoral para cada aula",
+        "Stack reprodutível com Docker Compose"
+      ],
+      "metricas": [
+        { "valor": "5", "rotulo": "aulas progressivas" },
+        { "valor": "3", "rotulo": "pilares: métricas, traces e logs" },
+        { "valor": "LGTM", "rotulo": "stack Grafana via Docker" }
+      ],
+      "tags": [
+        "eng"
+      ],
+      "stack": [
+        "Python",
+        "FastAPI",
+        "OpenTelemetry",
+        "Prometheus",
+        "Tempo",
+        "Loki",
+        "Grafana",
+        "PostgreSQL",
+        "Docker Compose"
+      ],
+      "links": {
+        "codigo": "https://github.com/PedroLuizskt/estudos-observabilidade",
+        "demo": null
+      },
+      "midia": {
+        "capa": "assets/projects/estudos-observabilidade/cover.jpg",
+        "capaMini": "assets/projects/estudos-observabilidade/cover-800.jpg",
+        "video": null,
+        "galeria": [
+          { "src": "assets/projects/estudos-observabilidade/cover.jpg", "legenda": "Os três pilares ao longo das cinco aulas" }
+        ]
+      }
+    }
+  ],
+  "consultorias": {
+    "rascunho": false,
+    "intro": "Presto consultoria em geoprocessamento e desenvolvimento GIS para licenciamento ambiental, linhas de transmissão e compensação ambiental, hoje como consultor da Vimef Engenharia. Mapas e análises saem de pipelines em Python sobre bases oficiais e modelos de elevação, prontos para compor o relatório técnico. Abaixo, exemplos de entregas reais.",
+    "itens": [
+      {
+        "id": "consultoria-pcia-prada",
+        "titulo": "Cartografia para PCIA e PRADA",
+        "local": "Licenciamento ambiental, TR do IEF",
+        "resumo": "Pranchas técnicas no padrão do TR do IEF: uso do solo, sub-bacias, formações vegetais, APP e restrições de engenharia.",
+        "entregaveis": [
+          "Uso e cobertura do solo (MapBiomas)",
+          "Sub-bacias e formações vegetais (IBGE)",
+          "APP, hidrologia e restrições operacionais"
+        ],
+        "descricao": [
+          "Mapas para o PCIA e o PRADA da LT 345 kV Jaguara–Araxá 3 C1 (Engie / Graúna Transmissora), com 58,4 km entre Rifaina (SP), Sacramento e Araxá (MG). A linha é enquadrada nas sub-bacias da ANA (BHO) e nas formações vegetais do IBGE, e as áreas de compensação, junto à UHE Miranda, no rio Araguari, ganham pranchas próprias.",
+          "No PRADA, o uso e a cobertura do solo vêm do MapBiomas Coleção 9 (2023), recortados pelas áreas de compensação de APP, de espécies ameaçadas e de Mata Atlântica. No PCIA, o levantamento de APP combina relevo sombreado do FABDEM (30 m), acumulação de fluxo, curvas de nível, a cota máxima de inundação de 633,5 m e os acessos existentes, para evitar conflitos com a engenharia."
+        ],
+        "destaques": [
+          "Todas as pranchas seguem o TR do IEF (versão de 01/12/2021)",
+          "Imóvel de 118 ha, com 19,9 ha delimitados em três compensações",
+          "Cota máxima de inundação e acessos cruzados com a área de APP"
+        ],
+        "metricas": [
+          { "valor": "58,4 km", "rotulo": "de LT enquadrada" },
+          { "valor": "118 ha", "rotulo": "imóvel do PRADA" },
+          { "valor": "4", "rotulo": "pranchas neste exemplo" }
+        ],
+        "stack": [
+          "Python",
+          "GeoPandas",
+          "Rasterio",
+          "Matplotlib",
+          "MapBiomas",
+          "IDE-SISEMA",
+          "ANA (BHO)",
+          "FABDEM"
+        ],
+        "midia": {
+          "capa": "assets/consultorias/cartografia-pcia-prada/cover.jpg",
+          "capaMini": "assets/consultorias/cartografia-pcia-prada/cover-800.jpg",
+          "video": null,
+          "galeria": [
+            { "src": "assets/consultorias/cartografia-pcia-prada/g1.jpg", "mini": "assets/consultorias/cartografia-pcia-prada/g1-mini.jpg", "legenda": "PRADA: classes de uso e ocupação do solo (MapBiomas Col. 9)" },
+            { "src": "assets/consultorias/cartografia-pcia-prada/g2.jpg", "mini": "assets/consultorias/cartografia-pcia-prada/g2-mini.jpg", "legenda": "PCIA: APP, condicionantes hidrológicas e restrições de engenharia" },
+            { "src": "assets/consultorias/cartografia-pcia-prada/g3.jpg", "mini": "assets/consultorias/cartografia-pcia-prada/g3-mini.jpg", "legenda": "PCIA: enquadramento da LT nas sub-bacias hidrográficas" },
+            { "src": "assets/consultorias/cartografia-pcia-prada/g4.jpg", "mini": "assets/consultorias/cartografia-pcia-prada/g4-mini.jpg", "legenda": "PCIA: enquadramento da LT nas formações vegetais (IBGE, 2021)" }
+          ]
+        }
+      },
+      {
+        "id": "consultoria-declividade",
+        "titulo": "Declividade e APP por relevo",
+        "local": "Minas Gerais, sob demanda",
+        "resumo": "Declividade na classificação da EMBRAPA, a partir de LIDAR ou de modelos de elevação, com quadro estatístico e área real em 3D.",
+        "entregaveis": [
+          "Declividade EMBRAPA em seis classes",
+          "LIDAR de 1 m ou DEM de 12,5 m",
+          "Área planimétrica e área real em 3D"
+        ],
+        "descricao": [
+          "Análise de declividade para apoiar a delimitação de APP por relevo e o planejamento de intervenções. A declividade é calculada em graus (gdaldem slope), convertida para porcentagem e classificada nas seis classes da EMBRAPA, do plano (0 a 3%) ao escarpado (acima de 75%).",
+          "Cada prancha traz o quadro estatístico completo: área planimétrica e área real considerando o relevo, perímetro, mínimo, máximo, média, mediana, desvio-padrão e distribuição por classe. No polígono Antiga IB, o LIDAR aerotransportado de 1 m mostrou declividade média de 35,1%, com predomínio do forte ondulado; em Campina Verde, o ALOS PALSAR de 12,5 m indicou 42,4% da área em relevo ondulado."
+        ],
+        "destaques": [
+          "Método documentado na própria prancha, para auditoria",
+          "Na Antiga IB, a área real em 3D é 8% maior que a planimétrica",
+          "Mesma metodologia de 2,5 ha a 45 ha"
+        ],
+        "metricas": [
+          { "valor": "1 m", "rotulo": "LIDAR aerotransportado" },
+          { "valor": "12,5 m", "rotulo": "ALOS PALSAR RTC" },
+          { "valor": "6", "rotulo": "classes EMBRAPA" }
+        ],
+        "stack": [
+          "Python",
+          "Rasterio",
+          "GDAL",
+          "NumPy",
+          "Matplotlib",
+          "LIDAR",
+          "ALOS PALSAR"
+        ],
+        "midia": {
+          "capa": "assets/consultorias/declividade-embrapa/cover.jpg",
+          "capaMini": "assets/consultorias/declividade-embrapa/cover-800.jpg",
+          "video": null,
+          "galeria": [
+            { "src": "assets/consultorias/declividade-embrapa/g1.jpg", "mini": "assets/consultorias/declividade-embrapa/g1-mini.jpg", "legenda": "Antiga IB: LIDAR de 1 m, declividade média de 35,1%" },
+            { "src": "assets/consultorias/declividade-embrapa/g2.jpg", "mini": "assets/consultorias/declividade-embrapa/g2-mini.jpg", "legenda": "Sucote 4, Campina Verde (MG): ALOS PALSAR de 12,5 m" }
+          ]
+        }
+      },
+      {
+        "id": "consultoria-webmap-lt",
+        "titulo": "WebMaps operacionais de LT",
+        "local": "LT 203 kV, inventário 1104 (SP)",
+        "resumo": "WebMap para o inventário de supressão na faixa de servidão, com edição de polígonos em campo e totais atualizados na hora.",
+        "entregaveis": [
+          "Supressão por espécie e por vão",
+          "Desenho manual com área calculada na hora",
+          "Exportação em GeoJSON, KML e HTML"
+        ],
+        "descricao": [
+          "WebMap autônomo, num único arquivo HTML, feito para o inventário de supressão de silvicultura da LT 203 kV, com vãos em Buri, Capão Bonito, Guapiara, Itaberá, Itapeva e Itararé (SP). Mostra o eucalipto e o pinus suprimidos em cada vão, o corredor de 40 m, as APPs do CAR e um mosaico Sentinel-2 do fim de março de 2026 para conferir a situação atual.",
+          "A equipe desenha polígonos novos direto no mapa: a área é calculada no ato, os totais por espécie se atualizam e o estado fica salvo no navegador. Ao final, tudo sai em GeoJSON, KML ou num novo WebMap para o cliente."
+        ],
+        "destaques": [
+          "74 ha de eucalipto e pinus mapeados em 44 vãos",
+          "3,86 ha em APP do CAR separados no cálculo final",
+          "Colheita acompanhada de novembro de 2025 a março de 2026"
+        ],
+        "metricas": [
+          { "valor": "74 ha", "rotulo": "de silvicultura mapeada" },
+          { "valor": "44", "rotulo": "vãos inventariados" },
+          { "valor": "3,86 ha", "rotulo": "em APP do CAR" }
+        ],
+        "stack": [
+          "Python",
+          "Folium",
+          "Leaflet.js",
+          "Leaflet.draw",
+          "Turf.js",
+          "Sentinel-2",
+          "Google Earth Engine"
+        ],
+        "midia": {
+          "capa": "assets/consultorias/webmap-lt/cover.jpg",
+          "capaMini": "assets/consultorias/webmap-lt/cover-800.jpg",
+          "video": "assets/consultorias/webmap-lt/preview.mp4",
+          "galeria": [
+            { "src": "assets/consultorias/webmap-lt/g1.jpg", "mini": "assets/consultorias/webmap-lt/g1-mini.jpg", "legenda": "Inventário 1104 sobre a imagem de satélite, com ferramentas de edição e tabela de polígonos" },
+            { "src": "assets/consultorias/webmap-lt/g2.jpg", "mini": "assets/consultorias/webmap-lt/g2-mini.jpg", "legenda": "Detalhe de um vão no corredor de 40 m, com o pop-up do polígono" }
+          ]
+        }
+      }
+    ],
+    "cta": {
+      "texto": "Pedir uma proposta",
+      "assunto": "Consultoria: pedido de proposta"
+    }
+  },
+  "camadas": [
+    {
+      "nome": "Linguagens",
+      "itens": [
+        "Python",
+        "TypeScript",
+        "JavaScript",
+        "SQL",
+        "R"
+      ]
+    },
+    {
+      "nome": "Geoespacial e nuvem",
+      "itens": [
+        "Google Earth Engine",
+        "QGIS (PyQGIS)",
+        "GeoPandas",
+        "Rasterio",
+        "Shapely",
+        "GDAL",
+        "PostGIS",
+        "H3",
+        "PyArrow"
+      ]
+    },
+    {
+      "nome": "Back-end e APIs",
+      "itens": [
+        "FastAPI",
+        "Node.js",
+        "Django REST Framework",
+        "SQLModel",
+        "APIs RESTful",
+        "Clean Architecture"
+      ]
+    },
+    {
+      "nome": "Ciência de dados e IA",
+      "itens": [
+        "Pandas",
+        "NumPy",
+        "SciPy",
+        "scikit-learn",
+        "NLTK",
+        "PyTorch",
+        "TensorFlow",
+        "LangChain",
+        "Chroma"
+      ]
+    },
+    {
+      "nome": "Dados e armazenamento",
+      "itens": [
+        "DuckDB",
+        "PostgreSQL",
+        "SQLite",
+        "MinIO",
+        "Parquet",
+        "SQLAlchemy"
+      ]
+    },
+    {
+      "nome": "Visualização e BI",
+      "itens": [
+        "Leaflet.js",
+        "Chart.js",
+        "Plotly",
+        "Streamlit",
+        "Power BI"
+      ]
+    },
+    {
+      "nome": "Operação e observabilidade",
+      "itens": [
+        "Docker",
+        "Git e GitHub",
+        "OpenTelemetry",
+        "Grafana",
+        "GitHub Pages"
+      ]
+    }
+  ],
+  "experiencia": [
+    { "cargo": "Cientista de Dados", "organizacao": "EnvironBIT", "vinculo": "Projeto CNPq", "periodo": "abr. 2026 – atual", "local": "Remoto", "resumo": "Pesquisa e desenvolvimento em inteligência de dados e sustentabilidade. Automação de pipelines geoespaciais em escala nacional, integração com arquitetura medallion (MinIO e PostgreSQL) e dashboards analíticos para tomada de decisão." },
+    { "cargo": "Consultor em Geoprocessamento e Desenvolvimento GIS", "organizacao": "Vimef Engenharia", "vinculo": "Consultoria", "periodo": "fev. 2026 – atual", "local": "Remoto", "resumo": "Soluções GIS automatizadas em Python para linhas de transmissão e projetos de compensação ambiental: processamento matricial em larga escala (MapBiomas), análises topológicas, pranchas cartográficas geradas automaticamente e ferramentas web para operação de campo." },
+    { "cargo": "Estagiário em Python Back-end e Ciência de Dados", "organizacao": "Instituto Espinhaço", "vinculo": "Estágio", "periodo": "ago. 2025 – out. 2025", "local": "Remoto", "resumo": "Suíte de pipelines ETL em Python para diagnósticos baseados em dados governamentais e territoriais (SICAR, IBGE), integrando processamento local e Google Earth Engine. O tempo de produção de relatórios caiu de dias para minutos." }
+  ],
+  "formacao": [
+    { "curso": "Pós-graduação em Ciência de Dados", "instituicao": "Data Science Academy, Faculdade Facint", "periodo": "jun. 2026 – atual" },
+    { "curso": "Bacharelado em Engenharia Florestal", "instituicao": "Universidade Federal de São João del-Rei", "periodo": "2019 – 2025" }
+  ],
+  "idiomas": [
+    { "idioma": "Português", "nivel": "Nativo" },
+    { "idioma": "Inglês", "nivel": "Fluente (EF SET 77/100)" },
+    { "idioma": "Espanhol", "nivel": "Intermediário" }
+  ]
+}
