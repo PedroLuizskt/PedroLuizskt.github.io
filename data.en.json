@@ -1,0 +1,555 @@
+{
+  "autor": { "curriculo": "assets/docs/resume_pedro_luiz_en.pdf" },
+  "tags": {
+    "webgis": "WebGIS",
+    "clima": "Climate and water",
+    "sr": "Remote sensing",
+    "ml": "Machine learning and AI",
+    "eng": "Software engineering"
+  },
+  "aoVivo": [
+    { "projeto": "florestas-publicas-brasil", "rotulo": "Public forests", "aviso": "Loads about 85 MB of GeoJSON. A Wi-Fi connection is recommended." },
+    { "projeto": "enso-centro-oeste", "rotulo": "ENSO in the Center-West", "aviso": "Loads about 2 MB." },
+    { "projeto": "gee-precipitation-webmap-mg", "rotulo": "Extreme rainfall in MG", "aviso": "Loads about 2 MB." },
+    { "projeto": "open-buildings-explorer-br", "rotulo": "Open Buildings", "aviso": "Loads the polygons of more than 500 thousand buildings; it may take a few seconds." },
+    { "projeto": "agrodados", "rotulo": "AgroDados", "aviso": "Loads about 2.5 MB." }
+  ],
+  "projetos": [
+    {
+      "id": "florestas-publicas-brasil",
+      "titulo": "Public Forests of Brazil",
+      "local": "Brazil, CNFP 2024",
+      "resumo": "Geospatial analysis of Brazil's National Public Forest Registry combined with IBGE boundaries, published as a four-tab WebMap.",
+      "descricao": [
+        "Complete geospatial analysis of the National Public Forest Registry (CNFP 2024), maintained by the Brazilian Forest Service, combined with the 2024 IBGE municipal and state boundaries.",
+        "The WebMap published on GitHub Pages lets you explore 339.8 million hectares across four tabs: an overview with state and municipal choropleths, a ranking of the 50 largest municipalities, a historical series of forest designations since 1930 and a breakdown by biome."
+      ],
+      "destaques": [
+        "Choropleth that switches between states, municipalities and the forest layer, with a category filter",
+        "Largest registered public forest: Alto Rio Negro (AM), with 7.29 million hectares",
+        "Reproducible diagnostic and processing notebooks"
+      ],
+      "metricas": [
+        { "valor": "339.8 M ha", "rotulo": "registered area" },
+        { "valor": "39.91%", "rotulo": "of Brazil's territory" },
+        { "valor": "20,829", "rotulo": "features analyzed" }
+      ],
+      "midia": {
+        "galeria": [
+          { "legenda": "Municipal choropleth of public forest area" },
+          { "legenda": "Public forest layer by category" },
+          { "legenda": "Municipal ranking tab" },
+          { "legenda": "Historical series of forest designations, 1930 to 2024" },
+          { "legenda": "Original capture with the CARTO basemap" }
+        ]
+      }
+    },
+    {
+      "id": "enso-centro-oeste",
+      "titulo": "ENSO in Brazil's Center-West",
+      "local": "MT, MS, GO and DF, 468 municipalities",
+      "resumo": "Python package measuring how El Niño drives the climate of Brazil's Center-West, with a WebMap dashboard that works offline.",
+      "descricao": [
+        "Installable Python package (enso_co) that quantifies the teleconnection between the El Niño-Southern Oscillation and the climate of Brazil's Center-West at the municipal level. It combines NOAA/CPC's official RONI, ONI and SOI indices with CHIRPS precipitation and ERA5-Land temperature retrieved through Google Earth Engine.",
+        "It applies Bretherton autocorrelation correction, circular permutation tests and Moran's I. RONI is the primary index, following NOAA since February 2026. The output is a self-contained dashboard that works offline."
+      ],
+      "destaques": [
+        "Robust latitudinal gradient: r between -0.836 and -0.849, with Moran's I above 0.93",
+        "Strong negative pole in northern Mato Grosso and an OND seasonal window identified empirically",
+        "All data retrieved programmatically, with no manual downloads"
+      ],
+      "metricas": [
+        { "valor": "468", "rotulo": "municipalities analyzed" },
+        { "valor": "3", "rotulo": "NOAA indices: RONI, ONI and SOI" },
+        { "valor": "> 0.93", "rotulo": "Moran's I of the gradient" }
+      ],
+      "midia": {
+        "galeria": [
+          { "legenda": "Annual precipitation by municipality" },
+          { "legenda": "Teleconnection mode: correlation with RONI" },
+          { "legenda": "Correlation tab by index" },
+          { "legenda": "Composites by ENSO phase" },
+          { "legenda": "Original capture with the basemap" }
+        ]
+      }
+    },
+    {
+      "id": "gee-precipitation-webmap-mg",
+      "titulo": "Extreme Rainfall in MG",
+      "local": "Zona da Mata and southern Minas Gerais",
+      "resumo": "Serverless pipeline that processed 20 years of CHIRPS in Earth Engine to quantify the February 2026 climate disaster in Minas Gerais.",
+      "descricao": [
+        "In February 2026, the Zona da Mata region of Minas Gerais faced an unprecedented climate disaster. This geospatial ETL pipeline filters 20 years (2006 to 2026) of daily CHIRPS imagery in Google Earth Engine, delegating the spatial reduction to Google's clusters.",
+        "GeoPandas harmonizes the 2024 IBGE boundaries, Pandas computes means, deviations and anomalies, and the result is injected into a self-contained Leaflet WebMap with no back-end."
+      ],
+      "destaques": [
+        "Juiz de Fora recorded 558 mm, against a historical mean of 197 mm",
+        "Critical alerts in Pequeri (+167%) and Barão do Monte Alto (+143%)",
+        "A singleton cache avoids redundant calls to the Earth Engine API"
+      ],
+      "metricas": [
+        { "valor": "558 mm", "rotulo": "Juiz de Fora, Feb 2026" },
+        { "valor": "+183%", "rotulo": "above the historical mean" },
+        { "valor": "20 years", "rotulo": "of daily CHIRPS" }
+      ],
+      "midia": {
+        "galeria": [
+          { "legenda": "February 2026 over satellite imagery: regional mean and series by municipality" },
+          { "legenda": "Juiz de Fora highlighted: 558 mm in February 2026" },
+          { "legenda": "Overview with the disaster summary and the municipal ranking" }
+        ]
+      }
+    },
+    {
+      "id": "open-buildings-explorer-br",
+      "titulo": "Open Buildings Explorer BR",
+      "local": "Cambuquira and Uberlândia (MG)",
+      "resumo": "DuckDB querying the 141 million buildings of Open Buildings in Brazil straight from S3, with a WebMap comparing Google and Microsoft.",
+      "descricao": [
+        "Python pipeline that queries Google-Microsoft Open Buildings, with 2.5 billion buildings worldwide and 141 million in Brazil, straight from public S3 storage with DuckDB: Parquet reads with predicate pushdown and spatial SQL, with no server and no need to download the whole dataset for each analysis.",
+        "Areas of interest use the official polygons of the 2022 IBGE municipal boundaries, and new AOIs are added through a command-line tool that fetches the polygon from the IBGE API. The result is a multi-AOI WebMap with a three-tab panel: an overview with the Google × Microsoft split, a histogram of footprint areas by size class with a comparison table across AOIs, and the details of each clicked building."
+      ],
+      "destaques": [
+        "Uberlândia has 44 times more buildings than Cambuquira in 17 times more area",
+        "In Cambuquira, 92.7% of footprints come from Google; Microsoft captures smaller structures (57.6 m² on average, versus 96.8 m²)",
+        "Full CLI, including management of DuckDB's 35 to 40 GB cache"
+      ],
+      "metricas": [
+        { "valor": "141 M", "rotulo": "buildings in Brazil" },
+        { "valor": "537,880", "rotulo": "buildings in Uberlândia" },
+        { "valor": "169", "rotulo": "automated tests" }
+      ],
+      "stack": [
+        "Python",
+        "DuckDB",
+        "Spatial SQL",
+        "Parquet (S3)",
+        "Leaflet.js",
+        "Chart.js",
+        "pytest"
+      ],
+      "midia": {
+        "galeria": [
+          { "legenda": "Uberlândia: 537,880 buildings and the distribution of areas by size class" },
+          { "legenda": "Cambuquira: details of a clicked building (Google source, 85 m²)" }
+        ]
+      }
+    },
+    {
+      "id": "gee-app-parana",
+      "titulo": "Paraná: Forestry and Climate",
+      "local": "Paraná, Earth Engine App",
+      "resumo": "Google Earth Engine app with three modules: MapBiomas land use, dense forest detection and carbon stock.",
+      "descricao": [
+        "Platform with three interactive modules aimed at the forestry sector. The first maps land use with MapBiomas Collection 10 (1985 to 2024) and isolates commercial plantations. The second detects dense forests by combining Sentinel-2 NDVI and NDII to separate forest stands from seasonal crops.",
+        "The third maps above-ground carbon stock with ESA CCI Biomass v6.0 (2015 to 2022). When you click the map, the app generates charts of the surrounding class composition, the monthly phenological cycle or the evolution of carbon per hectare."
+      ],
+      "destaques": [
+        "MapBiomas Collection 10, from 1985 to 2024",
+        "Sentinel-2 NDVI and NDII to separate dense forests from seasonal crops",
+        "Charts generated on demand with each click on the map"
+      ],
+      "metricas": [
+        { "valor": "3", "rotulo": "analytical modules" },
+        { "valor": "40 years", "rotulo": "of MapBiomas land use" },
+        { "valor": "2015–22", "rotulo": "ESA CCI biomass series" }
+      ],
+      "midia": {
+        "galeria": [
+          { "legenda": "App interface with a chart of the surrounding land-cover composition" }
+        ]
+      }
+    },
+    {
+      "id": "brazil-hydro-dynamics",
+      "titulo": "Brazil Hydro Dynamics",
+      "local": "Brazilian municipalities",
+      "resumo": "Object-oriented Earth Engine pipelines for micro-watersheds, surface water dynamics and flood risk with the HAND index.",
+      "descricao": [
+        "Suite of Python pipelines for hydrological, topographic and surface water analysis of Brazilian municipalities, with an object-oriented architecture and processing in Google Earth Engine.",
+        "There are three modules: HydroATLAS level-10 micro-watersheds with discharge, precipitation and forest cover; surface water transitions over almost 40 years with the JRC Global Surface Water dataset; and hydro-topography with MERIT Hydro, including slope, drainage network and the HAND index to map flood risk."
+      ],
+      "destaques": [
+        "Slope maps of Petrópolis (RJ) and elevation and discharge maps of Porto Alegre (RS)",
+        "Water persistence classification: permanent, seasonal and new",
+        "Modular, reproducible structure in notebooks"
+      ],
+      "metricas": [
+        { "valor": "3", "rotulo": "analytical modules" },
+        { "valor": "1984–2021", "rotulo": "JRC surface water" },
+        { "valor": "level 10", "rotulo": "HydroATLAS micro-watersheds" }
+      ],
+      "midia": {
+        "galeria": [
+          { "legenda": "Terrain slope in Petrópolis (RJ)" },
+          { "legenda": "Digital elevation of Porto Alegre (RS)" },
+          { "legenda": "Drainage network and mean discharge in Porto Alegre" },
+          { "legenda": "Micro-watershed statistics" }
+        ]
+      }
+    },
+    {
+      "id": "geospatial-automation-suite",
+      "titulo": "Geospatial Automation Suite",
+      "local": "Dossiers by municipality or property",
+      "resumo": "A report factory: pipelines that generate technical PDF dossiers on rural registry, soils, climate and land use in minutes, not days.",
+      "descricao": [
+        "Suite of pipelines that turns the production of technical reports, once manual and repetitive, into an automated system. It combines local processing with GeoPandas and Rasterio for sensitive vector data (CAR rural environmental registry, Legal Reserve, permanent preservation areas) with Google Earth Engine for nationwide analyses.",
+        "It generates PDF dossiers with ready-made thematic maps: municipal CAR, automatic Legal Reserve balance (20%, 35% or 80%, depending on the biome and the Legal Amazon), multi-temporal land use from 1985 to 2024, NASADEM slope, soil carbon, vegetation indices and climate."
+      ],
+      "destaques": [
+        "15 real example reports published in the repository",
+        "Automatic calculation of Legal Reserve deficit or surplus",
+        "Land use and land cover in Acará (PA), comparing 1985 and 2024"
+      ],
+      "metricas": [
+        { "valor": "15", "rotulo": "example reports" },
+        { "valor": "1985–2024", "rotulo": "MapBiomas land use" },
+        { "valor": "minutes", "rotulo": "per report, formerly days" }
+      ],
+      "midia": {
+        "galeria": [
+          { "legenda": "Real pages of reports generated by the suite" },
+          { "legenda": "EVI report" },
+          { "legenda": "Land surface temperature report" },
+          { "legenda": "Soil carbon report" },
+          { "legenda": "Land use and land cover in Acará (PA), 1985 and 2024" }
+        ]
+      }
+    },
+    {
+      "id": "forest-py-estudos",
+      "titulo": "Forest-Py",
+      "local": "Forest Engineering, 12 sessions",
+      "resumo": "Python package comparing classical models and neural networks in dendrometry, inventory and U-Net tree crown segmentation.",
+      "descricao": [
+        "Installable Python package (forestpy) that applies machine learning and deep learning to classic Forest Engineering problems: dendrometry, forest inventory, site classification, diameter distribution and remote sensing, up to semantic segmentation of tree crowns with a U-Net in PyTorch.",
+        "The central thesis is shown empirically across twelve sessions: no paradigm is universally superior. Classical models win with the right functional form or with little data; neural networks win with richer features or spatially dense outputs. The data are synthetic and reproducible, with realistic distributions of Eucalyptus grandis plantations."
+      ],
+      "destaques": [
+        "The U-Net beats the NDVI baseline by +0.72 IoU in tree crown segmentation",
+        "Cross-validation and bootstrap confidence intervals in every comparison",
+        "Inspired by Vinicius Richter's fptools and extended to neural networks"
+      ],
+      "metricas": [
+        { "valor": "223", "rotulo": "automated tests" },
+        { "valor": "12", "rotulo": "teaching sessions" },
+        { "valor": "+0.72", "rotulo": "IoU gain with the U-Net" }
+      ],
+      "midia": {
+        "galeria": [
+          { "legenda": "Visual comparison between the NDVI baseline and the U-Net" },
+          { "legenda": "NIR-R-G patches used in the CNN classification" },
+          { "legenda": "Normalized confusion matrix" },
+          { "legenda": "MLP learning curves" },
+          { "legenda": "Diameter distribution: Weibull compared with the MLP" }
+        ]
+      }
+    },
+    {
+      "id": "recomendador-municipios-agro",
+      "titulo": "Municipality Recommender",
+      "local": "Brazil, 5,571 municipalities",
+      "resumo": "Given a municipality, it returns the most similar ones by livestock profile: IBGE data become text, vectors and cosine similarity.",
+      "descricao": [
+        "Content-based recommender system that answers a practical question: given a Brazilian municipality, which ones have the most similar agricultural profile? It helps, for example, a consultant in Cambuquira (MG) find analogous municipalities in other states for benchmarking or commercial expansion.",
+        "The pipeline downloads livestock herd data from the Municipal Livestock Survey (SIDRA, table 3939) and the territorial hierarchy from the Localidades API, derives low, medium or high activity profiles and each municipality's specialization, and combines everything into a document of tags. CountVectorizer, with the RSLP stemmer for Portuguese and keeping compound names intact, turns these documents into vectors; cosine similarity ranks the neighbors.",
+        "It is an original adaptation of the vector space project from chapter 8 of the Data Science Academy postgraduate program, swapping movies for municipalities, with a six-session tutorial and an optional spatial validation extension using Moran's index."
+      ],
+      "destaques": [
+        "Query by name, by IBGE code or by a hypothetical tag profile",
+        "Each recommendation is explained: shared tokens and the three metrics side by side",
+        "Search for analogs outside the municipality's own state, for cross-state benchmarking"
+      ],
+      "metricas": [
+        { "valor": "5,571", "rotulo": "municipalities vectorized" },
+        { "valor": "3", "rotulo": "distance metrics" },
+        { "valor": "214", "rotulo": "automated tests" }
+      ],
+      "stack": [
+        "Python",
+        "pandas",
+        "scikit-learn",
+        "NLTK (RSLP)",
+        "SIDRA API",
+        "pytest"
+      ],
+      "midia": {
+        "galeria": [
+          { "legenda": "Cover: municipalities as vectors and the angle between them" },
+          { "legenda": "From IBGE to top-k: the pipeline stages and the command line" }
+        ]
+      }
+    },
+    {
+      "id": "analise-silvicultura-brasileira",
+      "titulo": "Brazilian Forestry Market",
+      "local": "IBGE PEVS, 3,700+ municipalities",
+      "resumo": "From ETL on the SIDRA API to K-Means: production profiles of municipalities in the timber, pulp and energy sector.",
+      "descricao": [
+        "End-to-end data science pipeline on the Brazilian forestry market. It extracts and cleans data from IBGE Table 291 (PEVS, the forestry production survey) through the SIDRA API and turns raw records into market intelligence.",
+        "It segments more than 3,700 producing municipalities with K-Means, calibrated with the elbow method and validated geometrically with PCA, with interactive Plotly visualizations to support decisions."
+      ],
+      "destaques": [
+        "Minas Gerais leads the cumulative total, driven by the steel industry's demand for charcoal",
+        "Implied average price fell in 2024 while revenue grew",
+        "k = 4 clusters chosen with the elbow method"
+      ],
+      "metricas": [
+        { "valor": "3,700+", "rotulo": "producing municipalities" },
+        { "valor": "k = 4", "rotulo": "production profiles" },
+        { "valor": "PEVS", "rotulo": "IBGE, table 291" }
+      ],
+      "stack": [
+        "Python",
+        "Pandas",
+        "scikit-learn",
+        "Plotly",
+        "SIDRA API"
+      ],
+      "midia": {
+        "galeria": [
+          { "legenda": "Dashboard of the Brazilian forestry sector" },
+          { "legenda": "Elbow method to choose k" },
+          { "legenda": "Cluster validation with PCA" },
+          { "legenda": "Cluster profiles" }
+        ]
+      }
+    },
+    {
+      "id": "geopython-assistant",
+      "titulo": "GeoPython Assistant",
+      "local": "AI applied to geosciences",
+      "resumo": "Geospatial coding assistant powered by an LLM. v1 is live; v2 uses RAG over the official docs to avoid made-up APIs.",
+      "descricao": [
+        "The first version is an AI mentor built with prompt engineering on Llama-3 70B via Groq: it translates any programming question into the geospatial ecosystem, favors official libraries and suggests optimizations for large datasets.",
+        "Version 2 combines two RAG fronts: a structured diagnosis of the vector and raster files uploaded by the user, validated with Pydantic v2, and retrieval of passages from the official GeoPandas, Rasterio and Rioxarray documentation stored in a Chroma vector database, composed in an LCEL chain."
+      ],
+      "destaques": [
+        "Reduces API hallucination by conditioning the code on the actual characteristics of the data",
+        "Public demo of version 1 on Streamlit Community Cloud",
+        "Automated tests for the diagnosis and the RAG pipeline"
+      ],
+      "metricas": [
+        { "valor": "70B", "rotulo": "Llama-3 via Groq" },
+        { "valor": "2", "rotulo": "RAG fronts in v2" },
+        { "valor": "Chroma", "rotulo": "vector store for the docs" }
+      ],
+      "links": {
+        "extra": { "rotulo": "Version 1 code" }
+      },
+      "midia": {
+        "galeria": [
+          { "legenda": "Version 2 architecture" },
+          { "legenda": "Version 1 interface on Streamlit, with a question being typed" }
+        ]
+      }
+    },
+    {
+      "id": "agrodados",
+      "titulo": "AgroDados",
+      "local": "Brazil, 27 federative units",
+      "resumo": "Hub that gathers Brazil's official land and environmental data portals in a clickable map, state by state.",
+      "descricao": [
+        "Web platform that tackles the fragmentation of geospatial, environmental and land tenure data in Brazil. Finding a CAR shapefile, water-use permit data or land use maps usually means searching dozens of different portals.",
+        "AgroDados works as a one-stop shop: an interactive SVG map filters the datasets by state, switching between federal sources (MapBiomas, SICAR, INDE) and state sources, organized by topic. Built during Alura's Imersão Dev with Google."
+      ],
+      "destaques": [
+        "SVG map of Brazil with a state filter",
+        "Datasets organized by topic: land regularization, topography, hydrology and land use",
+        "Plain HTML, CSS and JavaScript, no framework"
+      ],
+      "metricas": [
+        { "valor": "80", "rotulo": "official datasets cataloged" },
+        { "valor": "27", "rotulo": "federative units" },
+        { "valor": "1", "rotulo": "single point of access" }
+      ],
+      "midia": {
+        "galeria": [
+          { "legenda": "Minas Gerais selected on the map" },
+          { "legenda": "Home screen with the map of Brazil" }
+        ]
+      }
+    },
+    {
+      "id": "romaneio-digital-vimef",
+      "titulo": "Vimef Digital Timber Tally",
+      "local": "Consulting, Vimef Engenharia",
+      "resumo": "Serverless timber tally system: an offline-first field module and a client dashboard with log and firewood volume scaling.",
+      "descricao": [
+        "Serverless front-end application that digitizes the collection, calculation and presentation of timber tallies for logs and firewood. The field module works offline, saves locally, computes volumes in real time and shrinks photos to lightweight base64 before export.",
+        "The whole state of a job becomes a single JSON file that feeds a public dashboard with indicators, Chart.js charts and a carousel of yard photos. The calculation engine applies Smalian's formula, tolerant to missing measurements, and converts firewood from stacked cubic meters (stere) to solid cubic meters."
+      ],
+      "destaques": [
+        "Exact Smalian formula, tolerant to missing measurements at the base or top",
+        "Offline-first with localStorage, immune to connection drops",
+        "Static delivery on GitHub Pages, with no server or database"
+      ],
+      "metricas": [
+        { "valor": "Smalian", "rotulo": "log volume scaling" },
+        { "valor": "0.725", "rotulo": "stere to m³ factor" },
+        { "valor": "100%", "rotulo": "in the browser" }
+      ],
+      "midia": {
+        "galeria": [
+          { "legenda": "Public timber tally dashboard" },
+          { "legenda": "Volume by species and by yard" },
+          { "legenda": "Log table with Smalian's formula" },
+          { "legenda": "Firewood table with stacking factor" }
+        ]
+      }
+    },
+    {
+      "id": "estudos-observabilidade",
+      "titulo": "Observability Studies",
+      "local": "Python, Grafana LGTM stack",
+      "resumo": "Five lessons that take an uninstrumented service all the way to correlated metrics, traces and logs with OpenTelemetry.",
+      "descricao": [
+        "Incremental journey through the modern observability ecosystem in Python. Starting from an intentionally uninstrumented application, each lesson adds a pillar: metrics with OpenTelemetry and Prometheus, distributed tracing with Tempo and W3C context propagation, structured logs correlated in Loki and instrumented PostgreSQL persistence.",
+        "Everything runs on the Grafana LGTM stack with Docker Compose. The repository documents how the code evolves through progressive commits and how the reasoning evolves through original study guides."
+      ],
+      "destaques": [
+        "Trace and log correlation with W3C context propagation",
+        "An original study guide for each lesson",
+        "Reproducible stack with Docker Compose"
+      ],
+      "metricas": [
+        { "valor": "5", "rotulo": "progressive lessons" },
+        { "valor": "3", "rotulo": "pillars: metrics, traces and logs" },
+        { "valor": "LGTM", "rotulo": "Grafana stack via Docker" }
+      ],
+      "midia": {
+        "galeria": [
+          { "legenda": "The three pillars across the five lessons" }
+        ]
+      }
+    }
+  ],
+  "consultorias": {
+    "intro": "I provide geoprocessing and GIS development consulting for environmental licensing, power transmission lines and environmental compensation, currently as a consultant for Vimef Engenharia. Maps and analyses come out of Python pipelines built on official datasets and elevation models, ready to go into the technical report. Below are examples of real deliverables.",
+    "itens": [
+      {
+        "id": "consultoria-pcia-prada",
+        "titulo": "PCIA and PRADA Cartography",
+        "local": "Environmental licensing, IEF terms of reference",
+        "resumo": "Map sheets to the IEF standard: land use, sub-basins, vegetation types, preservation areas and engineering constraints.",
+        "entregaveis": [
+          "Land use and land cover (MapBiomas)",
+          "Sub-basins and vegetation types (IBGE)",
+          "Preservation areas, hydrology, constraints"
+        ],
+        "descricao": [
+          "Maps for the PCIA (compensation for environmental intervention) and the PRADA (recovery of degraded areas) of the 345 kV Jaguara–Araxá 3 C1 transmission line (Engie / Graúna Transmissora), which runs 58.4 km between Rifaina (SP), Sacramento and Araxá (MG). The line is framed within the ANA sub-basins (BHO) and the IBGE vegetation types, and the compensation areas, next to the Miranda hydropower plant on the Araguari River, get their own map sheets.",
+          "In the PRADA, land use and land cover come from MapBiomas Collection 9 (2023), clipped to the compensation areas for permanent preservation areas, threatened species and the Atlantic Forest. In the PCIA, the survey of permanent preservation areas combines FABDEM hillshade (30 m), flow accumulation, contour lines, the maximum flood level of 633.5 m and existing access roads, to avoid conflicts with the engineering design."
+        ],
+        "destaques": [
+          "Every map sheet follows the IEF terms of reference (version of 12/01/2021)",
+          "A 118 ha property, with 19.9 ha delineated in three compensation areas",
+          "Maximum flood level and access roads overlaid with the permanent preservation area"
+        ],
+        "metricas": [
+          { "valor": "58.4 km", "rotulo": "of transmission line mapped" },
+          { "valor": "118 ha", "rotulo": "PRADA property" },
+          { "valor": "4", "rotulo": "map sheets in this example" }
+        ],
+        "midia": {
+          "galeria": [
+            { "legenda": "PRADA: land use and land cover classes (MapBiomas Col. 9)" },
+            { "legenda": "PCIA: permanent preservation areas, hydrological factors and engineering constraints" },
+            { "legenda": "PCIA: transmission line within the river sub-basins" },
+            { "legenda": "PCIA: transmission line within the vegetation types (IBGE, 2021)" }
+          ]
+        }
+      },
+      {
+        "id": "consultoria-declividade",
+        "titulo": "Slope and Preservation Areas",
+        "local": "Minas Gerais, on demand",
+        "resumo": "EMBRAPA slope classes from LiDAR or elevation models, with a statistics table and true 3D surface area.",
+        "entregaveis": [
+          "EMBRAPA slope in six classes",
+          "1 m LiDAR or 12.5 m DEM",
+          "Planimetric area and true 3D surface area"
+        ],
+        "descricao": [
+          "Slope analysis to support the delineation of terrain-based permanent preservation areas and the planning of interventions. Slope is computed in degrees (gdaldem slope), converted to percent and classified into the six EMBRAPA classes, from flat (0 to 3%) to escarpment (above 75%).",
+          "Each map sheet includes the full statistics table: planimetric area and true area considering the terrain, perimeter, minimum, maximum, mean, median, standard deviation and distribution by class. In the Antiga IB polygon, 1 m airborne LiDAR showed a mean slope of 35.1%, dominated by strongly rolling terrain; in Campina Verde, 12.5 m ALOS PALSAR indicated 42.4% of the area in rolling terrain."
+        ],
+        "destaques": [
+          "Method documented on the map sheet itself, for auditing",
+          "In Antiga IB, the true 3D area is 8% larger than the planimetric area",
+          "The same methodology from 2.5 ha to 45 ha"
+        ],
+        "metricas": [
+          { "valor": "1 m", "rotulo": "airborne LiDAR" },
+          { "valor": "12.5 m", "rotulo": "ALOS PALSAR RTC" },
+          { "valor": "6", "rotulo": "EMBRAPA classes" }
+        ],
+        "midia": {
+          "galeria": [
+            { "legenda": "Antiga IB: 1 m LiDAR, mean slope of 35.1%" },
+            { "legenda": "Sucote 4, Campina Verde (MG): 12.5 m ALOS PALSAR" }
+          ]
+        }
+      },
+      {
+        "id": "consultoria-webmap-lt",
+        "titulo": "Transmission Line WebMaps",
+        "local": "203 kV line, inventory 1104 (SP)",
+        "resumo": "WebMap for the suppression inventory along the right-of-way, with in-field polygon editing and live totals.",
+        "entregaveis": [
+          "Suppression by species and by span",
+          "Manual drawing with instant area",
+          "Export to GeoJSON, KML and HTML"
+        ],
+        "descricao": [
+          "Self-contained WebMap, in a single HTML file, built for the forestry suppression inventory of the 203 kV transmission line, with spans in Buri, Capão Bonito, Guapiara, Itaberá, Itapeva and Itararé (SP). It shows the eucalyptus and pine suppressed in each span, the 40 m corridor, the permanent preservation areas from the CAR registry and a Sentinel-2 mosaic from late March 2026 to check current conditions.",
+          "The team draws new polygons directly on the map: the area is computed on the spot, the totals by species update and the state is saved in the browser. At the end, everything is exported to GeoJSON, KML or a new WebMap for the client."
+        ],
+        "destaques": [
+          "74 ha of eucalyptus and pine mapped across 44 spans",
+          "3.86 ha inside CAR permanent preservation areas separated in the final calculation",
+          "Harvest tracked from November 2025 to March 2026"
+        ],
+        "metricas": [
+          { "valor": "74 ha", "rotulo": "of plantation mapped" },
+          { "valor": "44", "rotulo": "spans inventoried" },
+          { "valor": "3.86 ha", "rotulo": "in CAR preservation areas" }
+        ],
+        "midia": {
+          "galeria": [
+            { "legenda": "Inventory 1104 over satellite imagery, with editing tools and the polygon table" },
+            { "legenda": "Detail of a span in the 40 m corridor, with the polygon pop-up" }
+          ]
+        }
+      }
+    ],
+    "cta": {
+      "texto": "Request a proposal",
+      "assunto": "Consulting: proposal request"
+    }
+  },
+  "camadas": [
+    { "nome": "Languages" },
+    { "nome": "Geospatial and cloud" },
+    { "nome": "Back-end and APIs", "itens": ["FastAPI", "Node.js", "Django REST Framework", "SQLModel", "RESTful APIs", "Clean Architecture"] },
+    { "nome": "Data science and AI" },
+    { "nome": "Data and storage" },
+    { "nome": "Visualization and BI" },
+    { "nome": "Operations and observability", "itens": ["Docker", "Git and GitHub", "OpenTelemetry", "Grafana", "GitHub Pages"] }
+  ],
+  "experiencia": [
+    { "cargo": "Data Scientist", "vinculo": "CNPq project", "periodo": "Apr 2026 – present", "local": "Remote", "resumo": "Research and development in data intelligence and sustainability. Automation of nationwide geospatial pipelines, integration with a medallion architecture (MinIO and PostgreSQL) and analytical dashboards for decision-making." },
+    { "cargo": "Geoprocessing and GIS Development Consultant", "vinculo": "Consulting", "periodo": "Feb 2026 – present", "local": "Remote", "resumo": "Automated GIS solutions in Python for power transmission lines and environmental compensation projects: large-scale raster processing (MapBiomas), topological analyses, automatically generated map sheets and web tools for field operations." },
+    { "cargo": "Python Back-end and Data Science Intern", "vinculo": "Internship", "periodo": "Aug 2025 – Oct 2025", "local": "Remote", "resumo": "Suite of Python ETL pipelines for diagnostics based on governmental and territorial data (SICAR, IBGE), combining local processing and Google Earth Engine. Report production time dropped from days to minutes." }
+  ],
+  "formacao": [
+    { "curso": "Postgraduate Degree in Data Science", "instituicao": "Data Science Academy, Facint College", "periodo": "Jun 2026 – present" },
+    { "curso": "B.Sc. in Forestry Engineering", "instituicao": "Federal University of São João del-Rei (UFSJ)", "periodo": "2019 – 2025" }
+  ],
+  "idiomas": [
+    { "idioma": "Portuguese", "nivel": "Native" },
+    { "idioma": "English", "nivel": "Fluent (EF SET 77/100)" },
+    { "idioma": "Spanish", "nivel": "Intermediate" }
+  ]
+}

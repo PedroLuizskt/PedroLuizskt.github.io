@@ -1,5 +1,5 @@
 /* =========================================================================
-   PORTFOLIO PEDRO LUIZ R. VAZ DE MELO - V6.1
+   PORTFOLIO PEDRO LUIZ R. VAZ DE MELO - V7.0
    Direcao: sensoriamento remoto noturno. Paleta de composicoes reais
    (verde NIR, ambar topografico, azul Sentinel, magenta Landsat).
    Mono apenas para coordenadas e numeros. Um unico momento de movimento
@@ -97,6 +97,13 @@ main, .site-header, .site-footer { position: relative; z-index: 1; }
 .site-nav .nav-cta { color: var(--veg); }
 .nav-toggle { display: none; width: 44px; height: 44px; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
 .nav-toggle span { width: 22px; height: 1.5px; background: var(--text); transition: transform .3s var(--ease), opacity .2s; }
+/* Seletor de idioma (PT/EN): fica visivel no celular, ao lado do menu */
+.nav-tools { position: relative; z-index: 30; display: flex; align-items: center; gap: .5rem; }
+.lang-switch { display: inline-flex; padding: 3px; border: 1px solid var(--line-2); border-radius: 999px; font: 500 .74rem/1 var(--f-mono); }
+.lang-opt { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; min-height: 34px; padding: 0 .55rem;
+  border-radius: 999px; color: var(--text-3); letter-spacing: .06em; transition: color .18s, background-color .18s; }
+.lang-opt:hover { color: var(--text); }
+.lang-opt[aria-current="true"] { background: var(--surface-2); color: var(--veg); }
 
 /* 5. HERO ------------------------------------------------------------------ */
 .hero { padding-block: clamp(3.5rem, 8vw, 6.5rem) clamp(3rem, 6vw, 5rem); }
@@ -378,6 +385,10 @@ main, .site-header, .site-footer { position: relative; z-index: 1; }
 .toast.is-visible { opacity: 1; translate: -50% 0; }
 
 /* 16. RESPONSIVO ----------------------------------------------------------- */
+@media (max-width: 1140px) and (min-width: 761px) {
+  .site-nav { gap: 1.1rem; }
+  .site-nav a { font-size: .88rem; }
+}
 @media (max-width: 1000px) {
   .hero-wrap { grid-template-columns: 1fr; }
   .hero-signature { justify-self: start; max-width: 300px; }

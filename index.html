@@ -12,20 +12,25 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
+  <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:title" content="Pedro Luiz R. Vaz de Melo | Portfólio geoespacial" />
   <meta property="og:description" content="Engenheiro florestal e cientista de dados geoespaciais. WebMaps ao vivo, pipelines reprodutíveis e APIs." />
   <meta property="og:url" content="https://pedroluizskt.github.io/" />
   <meta property="og:image" content="https://pedroluizskt.github.io/assets/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <link rel="alternate" hreflang="pt-BR" href="https://pedroluizskt.github.io/?lang=pt" />
+  <link rel="alternate" hreflang="en" href="https://pedroluizskt.github.io/?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://pedroluizskt.github.io/" />
+
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,0..100;1,9..144,300..600,0..100&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=6.1" />
+  <link rel="stylesheet" href="style.css?v=7.0" />
 </head>
 <body>
-  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <a class="skip-link" href="#conteudo" data-i18n="skip">Ir para o conteúdo</a>
 
   <div class="grid-backdrop" aria-hidden="true">
     <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
@@ -40,7 +45,7 @@
 
   <header class="site-header">
     <div class="wrap nav-wrap">
-      <a href="#topo" class="brand" aria-label="Pedro Luiz R. Vaz de Melo, início">
+      <a href="#topo" class="brand" aria-label="Pedro Luiz R. Vaz de Melo, início" data-i18n-attr="aria-label:brand.aria">
         <svg class="brand-mark" viewBox="0 0 40 40" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
           <polygon points="20,4 34,12 34,28 20,36 6,28 6,12" />
           <polygon points="20,12 27,16 27,24 20,28 13,24 13,16" opacity=".5" />
@@ -48,18 +53,24 @@
         <span class="brand-name">Pedro Luiz</span>
       </a>
 
-      <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
-        <a href="#mapas" data-nav>Mapas ao vivo</a>
-        <a href="#projetos" data-nav>Projetos</a>
-        <a href="#consultorias" data-nav>Consultorias</a>
-        <a href="#panorama" data-nav>Panorama</a>
-        <a href="#trajeto" data-nav>Trajeto</a>
-        <a href="#contato" class="nav-cta" data-nav>Contato</a>
+      <nav class="site-nav" id="site-nav" aria-label="Navegação principal" data-i18n-attr="aria-label:nav.aria">
+        <a href="#mapas" data-nav data-i18n="nav.mapas">Mapas ao vivo</a>
+        <a href="#projetos" data-nav data-i18n="nav.projetos">Projetos</a>
+        <a href="#consultorias" data-nav data-i18n="nav.consultorias">Consultorias</a>
+        <a href="#panorama" data-nav data-i18n="nav.panorama">Panorama</a>
+        <a href="#trajeto" data-nav data-i18n="nav.trajeto">Trajeto</a>
+        <a href="#contato" class="nav-cta" data-nav data-i18n="nav.contato">Contato</a>
       </nav>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-tools">
+        <div class="lang-switch" role="group" aria-label="Idioma do site" data-i18n-attr="aria-label:lang.aria">
+          <a class="lang-opt" href="?lang=pt" hreflang="pt-BR" lang="pt-BR" data-lang="pt" aria-current="true" title="Ver em português">PT</a>
+          <a class="lang-opt" href="?lang=en" hreflang="en" lang="en" data-lang="en" title="View in English">EN</a>
+        </div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -79,21 +90,21 @@
             <span class="hero-title-b">R. Vaz de Melo</span>
           </h1>
 
-          <p class="hero-lead">
+          <p class="hero-lead" data-i18n="hero.lead">
             Engenheiro florestal e cientista de dados geoespaciais. Transformo dados
             ambientais brutos em produtos reprodutíveis: pipelines que levam de dias
             para minutos, servidos como WebMaps, dashboards e APIs.
           </p>
 
           <dl class="hero-meta">
-            <div><dt>Formação</dt><dd>Engenharia Florestal, UFSJ (2025)</dd></div>
-            <div><dt>Atuação</dt><dd>EnvironBIT (CNPq) e Vimef Engenharia</dd></div>
-            <div><dt>Agora</dt><dd><span class="pulse-dot" aria-hidden="true"></span>Aberto a projetos e consultorias</dd></div>
+            <div><dt data-i18n="hero.formacao.dt">Formação</dt><dd data-i18n="hero.formacao.dd">Engenharia Florestal, UFSJ (2025)</dd></div>
+            <div><dt data-i18n="hero.atuacao.dt">Atuação</dt><dd data-i18n="hero.atuacao.dd">EnvironBIT (CNPq) e Vimef Engenharia</dd></div>
+            <div><dt data-i18n="hero.agora.dt">Agora</dt><dd><span class="pulse-dot" aria-hidden="true"></span><span data-i18n="hero.agora.dd">Aberto a projetos e consultorias</span></dd></div>
           </dl>
 
           <div class="hero-actions">
-            <a href="#projetos" class="btn btn-primary">Ver projetos</a>
-            <a href="#mapas" class="btn btn-ghost">Abrir os mapas ao vivo</a>
+            <a href="#projetos" class="btn btn-primary" data-i18n="hero.cta1">Ver projetos</a>
+            <a href="#mapas" class="btn btn-ghost" data-i18n="hero.cta2">Abrir os mapas ao vivo</a>
           </div>
         </div>
 
@@ -125,7 +136,7 @@
               </g>
               <g class="sig-labels">
                 <g transform="translate(30 40)"><circle r="3" fill="#6BC17C" class="crs-dot" /><line x2="50" stroke="#6BC17C" stroke-width=".8" opacity=".6" /><text x="56" y="4">EPSG:4674</text></g>
-                <g transform="translate(30 375)"><text>SIRGAS 2000</text><text y="14" opacity=".55">H3 resolução 8</text></g>
+                <g transform="translate(30 375)"><text>SIRGAS 2000</text><text y="14" opacity=".55" data-i18n="hero.h3">H3 resolução 8</text></g>
                 <g transform="translate(370 40)" text-anchor="end"><text>N</text><line x1="-4" y1="6" x2="-4" y2="24" stroke="#8B95A5" stroke-width=".8" /><polygon points="-4,6 -8,14 0,14" fill="#8B95A5" /></g>
               </g>
               <line class="sweep" x1="0" y1="0" x2="400" y2="0" stroke="#6BC17C" stroke-width=".5" stroke-dasharray="3 5" opacity=".7" />
@@ -141,25 +152,25 @@
     <section class="section section-live" id="mapas" aria-labelledby="mapas-title">
       <div class="wrap">
         <header class="section-head">
-          <h2 class="section-title" id="mapas-title">Mapas ao vivo</h2>
-          <p class="section-note">Os WebMaps publicados, rodando aqui dentro. Escolha um e carregue quando quiser.</p>
+          <h2 class="section-title" id="mapas-title" data-i18n="mapas.title">Mapas ao vivo</h2>
+          <p class="section-note" data-i18n="mapas.note">Os WebMaps publicados, rodando aqui dentro. Escolha um e carregue quando quiser.</p>
         </header>
 
         <div class="live" id="live">
-          <div class="live-tabs" role="tablist" aria-label="Escolher mapa" id="live-tabs"></div>
+          <div class="live-tabs" role="tablist" aria-label="Escolher mapa" data-i18n-attr="aria-label:mapas.tabs" id="live-tabs"></div>
           <div class="live-frame" id="live-frame">
             <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
             <img class="live-poster" id="live-poster" alt="" />
             <div class="live-overlay" id="live-overlay">
-              <button type="button" class="btn btn-primary" id="live-load">Carregar mapa interativo</button>
+              <button type="button" class="btn btn-primary" id="live-load" data-i18n="mapas.load">Carregar mapa interativo</button>
               <p class="live-warn" id="live-warn"></p>
             </div>
           </div>
           <div class="live-caption">
             <p class="live-desc" id="live-desc"></p>
             <div class="live-actions">
-              <a class="text-link" id="live-open" target="_blank" rel="noopener">Abrir em nova aba</a>
-              <button type="button" class="text-link" id="live-details">Ver detalhes do projeto</button>
+              <a class="text-link" id="live-open" target="_blank" rel="noopener" data-i18n="mapas.open">Abrir em nova aba</a>
+              <button type="button" class="text-link" id="live-details" data-i18n="mapas.details">Ver detalhes do projeto</button>
             </div>
           </div>
         </div>
@@ -170,19 +181,19 @@
     <section class="section" id="projetos" aria-labelledby="projetos-title">
       <div class="wrap">
         <header class="section-head">
-          <h2 class="section-title" id="projetos-title">Projetos</h2>
-          <p class="section-note">Do dado bruto ao produto final, com código aberto. Clique em um card para ver a galeria completa.</p>
+          <h2 class="section-title" id="projetos-title" data-i18n="projetos.title">Projetos</h2>
+          <p class="section-note" data-i18n="projetos.note">Do dado bruto ao produto final, com código aberto. Clique em um card para ver a galeria completa.</p>
         </header>
 
-        <div class="filters" role="group" aria-label="Filtrar projetos por tema" id="filters"></div>
+        <div class="filters" role="group" aria-label="Filtrar projetos por tema" data-i18n-attr="aria-label:projetos.filters" id="filters"></div>
         <div class="proj-grid" id="proj-grid" aria-live="polite">
-          <p class="loading">Carregando projetos…</p>
+          <p class="loading" data-i18n="projetos.loading">Carregando projetos…</p>
         </div>
         <div class="empty" id="proj-empty" hidden>
-          <p>Nenhum projeto com esse tema.</p>
-          <button type="button" class="btn btn-ghost" data-filter-reset>Mostrar todos</button>
+          <p data-i18n="projetos.empty">Nenhum projeto com esse tema.</p>
+          <button type="button" class="btn btn-ghost" data-filter-reset data-i18n="projetos.showAll">Mostrar todos</button>
         </div>
-        <p class="more-link" id="proj-more-link" hidden><a class="text-link" href="https://github.com/PedroLuizskt?tab=repositories" target="_blank" rel="noopener">Todos os repositórios no GitHub</a></p>
+        <p class="more-link" id="proj-more-link" hidden><a class="text-link" href="https://github.com/PedroLuizskt?tab=repositories" target="_blank" rel="noopener" data-i18n="projetos.moreLink">Todos os repositórios no GitHub</a></p>
       </div>
     </section>
 
@@ -190,7 +201,7 @@
     <section class="section section-consult" id="consultorias" aria-labelledby="consult-title">
       <div class="wrap">
         <header class="section-head">
-          <h2 class="section-title" id="consult-title">Consultorias</h2>
+          <h2 class="section-title" id="consult-title" data-i18n="consult.title">Consultorias</h2>
           <p class="section-note section-note-wide" id="consult-intro"></p>
         </header>
         <p class="draft-note" id="consult-draft" hidden>
@@ -207,23 +218,23 @@
       <div class="wrap">
         <header class="section-head">
           <p class="section-coord mono">21°51′S 45°18′W</p>
-          <h2 class="section-title" id="panorama-title">Panorama</h2>
+          <h2 class="section-title" id="panorama-title" data-i18n="panorama.title">Panorama</h2>
         </header>
         <div class="panorama">
           <figure class="portrait" id="portrait">
-            <img src="assets/img/perfil.jpg?v=6.1" alt="Pedro Luiz R. Vaz de Melo" width="480" height="600" loading="lazy" onerror="this.closest('.portrait').classList.add('is-empty')" />
+            <img src="assets/img/perfil.jpg?v=7.0" alt="Pedro Luiz R. Vaz de Melo" width="480" height="600" loading="lazy" onerror="this.closest('.portrait').classList.add('is-empty')" />
           </figure>
           <div class="panorama-text">
-            <p class="panorama-lead">Uno inteligência territorial e ciência de dados a arquiteturas de back-end de alta performance.</p>
-            <p>Sou engenheiro florestal (UFSJ, 2025) e cientista de dados geoespaciais, com base sólida em desenvolvimento back-end. Meu trabalho junta três exigências: rigor científico, desempenho de produção e clareza para quem toma a decisão.</p>
-            <p>Na prática, automatizo pipelines de dados ambientais com Python (GeoPandas, Rasterio, PyArrow) e Google Earth Engine, sirvo os resultados por APIs em Node.js, TypeScript ou FastAPI e materializo tudo em WebMaps e dashboards que substituem PDFs estáticos por evidência navegável.</p>
-            <p>Hoje sou cientista de dados na EnvironBIT (projeto CNPq) e consultor de geoprocessamento e desenvolvimento GIS na Vimef Engenharia, em linhas de transmissão e projetos de compensação ambiental. Curso pós-graduação em Ciência de Dados na Data Science Academy.</p>
+            <p class="panorama-lead" data-i18n="panorama.lead">Uno inteligência territorial e ciência de dados a arquiteturas de back-end de alta performance.</p>
+            <p data-i18n="panorama.p1">Sou engenheiro florestal (UFSJ, 2025) e cientista de dados geoespaciais, com base sólida em desenvolvimento back-end. Meu trabalho junta três exigências: rigor científico, desempenho de produção e clareza para quem toma a decisão.</p>
+            <p data-i18n="panorama.p2">Na prática, automatizo pipelines de dados ambientais com Python (GeoPandas, Rasterio, PyArrow) e Google Earth Engine, sirvo os resultados por APIs em Node.js, TypeScript ou FastAPI e materializo tudo em WebMaps e dashboards que substituem PDFs estáticos por evidência navegável.</p>
+            <p data-i18n="panorama.p3">Hoje sou cientista de dados na EnvironBIT (projeto CNPq) e consultor de geoprocessamento e desenvolvimento GIS na Vimef Engenharia, em linhas de transmissão e projetos de compensação ambiental. Curso pós-graduação em Ciência de Dados na Data Science Academy.</p>
           </div>
         </div>
 
         <div class="layers" aria-labelledby="camadas-title">
-          <h3 class="layers-title" id="camadas-title">Camadas</h3>
-          <p class="layers-note">Ferramentas organizadas como camadas de um projeto GIS: cada uma apoia a de cima.</p>
+          <h3 class="layers-title" id="camadas-title" data-i18n="camadas.title">Camadas</h3>
+          <p class="layers-note" data-i18n="camadas.note">Ferramentas organizadas como camadas de um projeto GIS: cada uma apoia a de cima.</p>
           <ol class="legend" id="legend"></ol>
         </div>
       </div>
@@ -233,17 +244,17 @@
     <section class="section" id="trajeto" aria-labelledby="trajeto-title">
       <div class="wrap">
         <header class="section-head">
-          <h2 class="section-title" id="trajeto-title">Trajeto</h2>
-          <p class="section-note">Experiência profissional e formação.</p>
+          <h2 class="section-title" id="trajeto-title" data-i18n="trajeto.title">Trajeto</h2>
+          <p class="section-note" data-i18n="trajeto.note">Experiência profissional e formação.</p>
         </header>
         <div class="trajeto">
           <ol class="exp-list" id="exp-list"></ol>
           <aside class="trajeto-side">
-            <h3 class="side-title">Formação</h3>
+            <h3 class="side-title" data-i18n="trajeto.formacao">Formação</h3>
             <ul class="edu-list" id="edu-list"></ul>
-            <h3 class="side-title">Idiomas</h3>
+            <h3 class="side-title" data-i18n="trajeto.idiomas">Idiomas</h3>
             <ul class="lang-list" id="lang-list"></ul>
-            <a class="btn btn-ghost btn-full" href="assets/docs/curriculo_pedro_luiz.pdf" download>Baixar currículo em PDF</a>
+            <a class="btn btn-ghost btn-full" id="cv-link" href="assets/docs/curriculo_pedro_luiz.pdf" download data-i18n="trajeto.cv">Baixar currículo em PDF</a>
           </aside>
         </div>
       </div>
@@ -253,17 +264,17 @@
     <section class="section section-contact" id="contato" aria-labelledby="contato-title">
       <div class="wrap">
         <header class="section-head">
-          <h2 class="section-title" id="contato-title">Contato</h2>
-          <p class="section-note">Consultorias, colaborações e conversas técnicas.</p>
+          <h2 class="section-title" id="contato-title" data-i18n="contato.title">Contato</h2>
+          <p class="section-note" data-i18n="contato.note">Consultorias, colaborações e conversas técnicas.</p>
         </header>
         <div class="email-row">
           <a class="email-link" href="mailto:pedroschuldiner@outlook.com">pedroschuldiner@outlook.com</a>
-          <button type="button" class="btn btn-ghost btn-small" id="copy-email">Copiar e-mail</button>
+          <button type="button" class="btn btn-ghost btn-small" id="copy-email" data-i18n="contato.copy">Copiar e-mail</button>
         </div>
         <ul class="contact-list">
           <li><span>GitHub</span><a href="https://github.com/PedroLuizskt" target="_blank" rel="noopener">github.com/PedroLuizskt</a></li>
           <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/pedro-luiz-rodrigues-vaz-de-melo" target="_blank" rel="noopener">in/pedro-luiz-rodrigues-vaz-de-melo</a></li>
-          <li><span>Base</span><p>Cambuquira, MG, trabalho remoto</p></li>
+          <li><span data-i18n="contato.base.dt">Base</span><p data-i18n="contato.base.dd">Cambuquira, MG, trabalho remoto</p></li>
         </ul>
       </div>
     </section>
@@ -272,7 +283,7 @@
   <footer class="site-footer">
     <div class="wrap footer-wrap">
       <p>Pedro Luiz R. Vaz de Melo</p>
-      <p>&copy; <span id="year"></span>. HTML, CSS e JavaScript sem framework. <a href="https://github.com/PedroLuizskt/PedroLuizskt.github.io" target="_blank" rel="noopener">Código-fonte</a></p>
+      <p>&copy; <span id="year"></span>. <span data-i18n="footer.stack">HTML, CSS e JavaScript sem framework.</span> <a href="https://github.com/PedroLuizskt/PedroLuizskt.github.io" target="_blank" rel="noopener" data-i18n="footer.source">Código-fonte</a></p>
     </div>
   </footer>
 
@@ -284,17 +295,17 @@
           <p class="pd-local" id="pd-local"></p>
           <h2 class="pd-title" id="pd-title"></h2>
         </div>
-        <button type="button" class="pd-close" id="pd-close" aria-label="Fechar painel">
+        <button type="button" class="pd-close" id="pd-close" aria-label="Fechar painel" data-i18n-attr="aria-label:pd.close">
           <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke-linecap="round" /></svg>
         </button>
       </header>
 
       <div class="pd-stage">
         <div class="pd-media" id="pd-media"></div>
-        <button type="button" class="pd-nav pd-prev" id="pd-prev" aria-label="Mídia anterior">
+        <button type="button" class="pd-nav pd-prev" id="pd-prev" aria-label="Mídia anterior" data-i18n-attr="aria-label:pd.prev">
           <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M10 3L5 8l5 5" stroke-linecap="round" stroke-linejoin="round" /></svg>
         </button>
-        <button type="button" class="pd-nav pd-next" id="pd-next" aria-label="Próxima mídia">
+        <button type="button" class="pd-nav pd-next" id="pd-next" aria-label="Próxima mídia" data-i18n-attr="aria-label:pd.next">
           <svg viewBox="0 0 16 16" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 3l5 5-5 5" stroke-linecap="round" stroke-linejoin="round" /></svg>
         </button>
       </div>
@@ -305,7 +316,7 @@
         <div class="pd-text" id="pd-text"></div>
         <aside class="pd-side">
           <dl class="pd-metrics" id="pd-metrics"></dl>
-          <h3 class="side-title">Ferramentas</h3>
+          <h3 class="side-title" data-i18n="pd.tools">Ferramentas</h3>
           <ul class="chips" id="pd-stack"></ul>
           <div class="pd-links" id="pd-links"></div>
         </aside>
@@ -315,6 +326,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="app.js?v=6.1"></script>
+  <script src="app.js?v=7.0"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 {
-  "versao": "6.1",
+  "versao": "7.0",
   "autor": { "nome": "Pedro Luiz R. Vaz de Melo", "email": "pedroschuldiner@outlook.com", "github": "https://github.com/PedroLuizskt", "linkedin": "https://www.linkedin.com/in/pedro-luiz-rodrigues-vaz-de-melo", "curriculo": "assets/docs/curriculo_pedro_luiz.pdf" },
   "tags": {
     "webgis": "WebGIS",
